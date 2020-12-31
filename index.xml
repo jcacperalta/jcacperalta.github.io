@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>https://jcacperalta.github.io/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020</copyright><atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about me</title>
+      <link>https://jcacperalta.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jcacperalta.github.io/about/</guid>
+      <description>Thanks for stopping by!
+I am currently a data scientist at the Commercial Operations Division of AC Energy Philippines where I create and deploy market forecasting models and provide weather/climate insights for power trading.
+Prior to that, I trained for 6 years as a climate scientist, specializing in regional monsoon dynamics and climate model evaluation.
+I&amp;rsquo;m also the lead researcher of Project GeoNetworksPH, where we quantitatively assessed the strengths and weaknesses of the transportation network of Visayas, Philippones for relief distribution logistics.</description>
+    </item>
+    
+    <item>
+      <title>my works</title>
+      <link>https://jcacperalta.github.io/works/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jcacperalta.github.io/works/</guid>
+      <description>An overview of my publications along with citation metrics can also be found on my Google Scholar profile.
+Published Works   Peralta J.C.A.C., Narisma G.T., and Cruz F.T. Validation of High-Resolution Gridded Rainfall Datasets for Climate Applications in the Philippines, Journal of Hydrometeorology 21, 7 (2020): 1571-1587, accessed Dec 30, 2020, https://doi.org/10.1175/JHM-D-19-0276.1
+  Peralta J.A., Lim M., and Reyes R., Transportation network efficiency during disaster events, Proceedings of the Samahang Pisika ng Pilipinas 38, SPP-2020-3C-07 (2020) https://proceedings.</description>
+    </item>
+    
+  </channel>
+</rss>
