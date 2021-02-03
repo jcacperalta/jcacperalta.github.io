@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TUTORIAL] Which generation controls the Philippine Senate? #DataViz</title>
-      <link>https://jcacperalta.github.io/blog/ph-senate-viz/</link>
+      <link>https://jcacperalta.github.io/blog/ph-senate-gen-viz/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0800</pubDate>
       
-      <guid>https://jcacperalta.github.io/blog/ph-senate-viz/</guid>
+      <guid>https://jcacperalta.github.io/blog/ph-senate-gen-viz/</guid>
       <description>Fork this project in Github here Get the data in Kaggle here  Earlier this year, I saw this post in r/dataisbeautiful showing the representation of generations in the US Senate. After seeing it, I just knew I had to make one for our Senate.
 Here is the completed visualization. I based the design from the original post, but the major innovation I made is that I added hover interactions using the python library Bokeh.</description>
     </item>
