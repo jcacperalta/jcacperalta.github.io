@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<title>TWICE line successions in their Korean singles (2015-2020) </title>
+	
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+		
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+		<!-- Two scripts to make the Bootstrap tooltip follow the mouse movement
+			 taken from https://github.com/ghophp/bootstrap-popover-move -->
+		<script src="bootstrap.tooltip.js"></script>
+		<script src="bootstrap.popover.js"></script>
+		<script src="d3.layout.chord.sort.js"></script>
+		
+		<style>
+			body {
+			  font-size: 14px;
+			  font-family: 'Lato', sans-serif;
+			  text-align: left;
+			  color: #757575;
+			  cursor: default;
+			}
+			
+			.title {
+				margin-top: 20px;
+				margin-bottom: 10px;
+				margin-left: 20px;
+				font-size:32px;
+				font-family: 'Oswald', sans-serif;
+				color: #2B2B2B;
+			}
+			
+			.texts {
+				margin-left: 20px;
+				margin-right: 20px;
+				line-height: 120%;
+			}
+			
+			.credit {
+				color: #9E9E9E;
+				font-size: 10px;
+				margin-bottom: 0.2em;
+			}
+			
+			.notes {
+				color: #9E9E9E;
+				font-size: 10px;
+			}
+			
+			.popover {
+				pointer-events: none;
+			}
+			
+			#chart{
+			  font-size: 16px;
+			  text-align: center;
+
+			}
+			
+			@media (min-width: 600px) {
+				#chart{
+					font-size: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div class = "title">TWICE line successions in their Korean singles (2015-2020) </div>
+		<div class = "explanation texts">
+			<p style="margin-bottom: 0em;">The visualization shows how many times a TWICE member succeeeds another member when singing their Korean singles. Successions are counted irrespective of order, i.e. a Jihyo->Nayeon succession is treated the same with a Nayeon->Jihyo succession). The thicker the connecting arcs, the more often the succession pair happened.</p>
+
+		<div id = "chart"></div>
+		<div class="credit texts">Data and analysis by JC Peralta. Base d3 viz code provided by Nadieh Bremer <a href="http://bl.ocks.org/nbremer/864b11eb83aac3a1f6a2">here</a> </div>
+		<div class = "notes texts">
+			The songs considered for this analysis are:  Like Ooh Ahh (2015), Cheer Up (2016), TT (2016), Heart Shaker (2017), Knock Knock (2017), Likely (2017), Signal (2017), Dance The Night Away (2018),  What Is Love (2018), Yes or Yes (2018), Fancy (2019), Feel Special (2019), More&More  (2020), I Can't Stop Me (2020), and Cry For Me (2020)</div>
+ 
+		<script src="script.js"></script>
+
+  </body>
+</html>

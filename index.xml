@@ -7,15 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>#kpop Analysis PART 1: How often do TWICE members succeed each other when singing their Korean songs? #DataViz</title>
+      <link>https://jcacperalta.github.io/blog/twice-analysis-part1/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/twice-analysis-part1/</guid>
+      <description>A dataset of TWICE Korean single releases and an interactive chord diagram of member lyric successions</description>
+    </item>
+    
     <item>
       <title>[TUTORIAL] Which generation controls the Philippine Senate? #DataViz</title>
       <link>https://jcacperalta.github.io/blog/ph-senate-gen-viz/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0800</pubDate>
       
       <guid>https://jcacperalta.github.io/blog/ph-senate-gen-viz/</guid>
-      <description>Fork this project in Github here Get the data in Kaggle here  Earlier this year, I saw this post in r/dataisbeautiful showing the representation of generations in the US Senate. After seeing it, I just knew I had to make one for our Senate.
-Here is the completed visualization. Each tile represents a Philippine Senator. I based the design from the original post, but the major innovation I made is that I added hover interactions using the python library Bokeh.</description>
+      <description>An interactive plot of the generation composition of the Philippine Senate from 1947 to present</description>
     </item>
     
     <item>
@@ -24,8 +32,7 @@ Here is the completed visualization. Each tile represents a Philippine Senator. 
       <pubDate>Thu, 31 Dec 2020 01:17:51 +0800</pubDate>
       
       <guid>https://jcacperalta.github.io/blog/my-first-intl-conference/</guid>
-      <description>I&amp;rsquo;m writing this post as I&amp;rsquo;m cramming to finish this site before this year ends. To start this blog, I thought I could share one of my first milestones as an early career researcher&amp;ndash;my first international conference presentation!
-This is me presenting our work entitled &amp;ldquo;The Influence of Warmer Sea Surface Temperatures on Southwest Monsoon Rainfall in the Philippines&amp;rdquo; in the Climate Change, Monsoon and Extreme Weather Events session (AS-03-26) of the Asia-Oceania Geosciences Society (AOGS) 11th Annual Meeting in Sapporo, Japan last July 29, 2014.</description>
+      <description>One of my first milestones as an early career researcher&amp;ndash;my first international conference presentation!</description>
     </item>
     
     <item>
