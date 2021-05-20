@@ -1,0 +1,137 @@
+
+#container {
+  width: 800px;
+  padding: 5px 0 10px 0;
+  margin: auto;
+}
+
+
+#controls {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.control {
+  float: left;
+  padding-left: 20px;
+}
+
+.control a {
+  color: black;
+  font-size: 12px;
+  padding: 5px;
+  background: #E2E2E2;
+  cursor: pointer;
+  margin-right: 3px;
+  text-decoration: none;
+}
+
+.control a:hover {
+  text-decoration: underline;
+}
+
+.control a.active {
+  color: white;
+  background: #555;
+}
+
+footer p {
+  text-align: center;
+}
+
+path.link {
+  fill: none;
+  stroke: #aaa;
+  stroke-width: 1px;
+  fill-opacity: 0.4;
+}
+
+path.link.iscommon {
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.25px;
+}
+
+path.link.active {
+  fill: none;
+  stroke: #aaa;
+  stroke-width: 1px;
+  fill-opacity: 0.4;
+}
+
+path.link.dim {
+  stroke: #ccc;
+  stroke-opacity: 0.15;
+}
+
+path.link.iscommon.active {
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.25px;
+}
+
+.arrow {
+  fill: #aaa;
+  stroke-width: 0;
+}
+
+.arrow.active {
+  fill: #aaa;
+  stroke-width: 0;
+}
+
+.arrow.iscommon {
+  fill: #555;
+  stroke-width: 0;
+}
+
+.arrow.iscommon.active {
+  fill: #555;
+  stroke-width: 0;
+}
+
+.arrow.dim {
+  fill: #ccc;
+  fill-opacity: 0.15;
+  stroke-width: 0;
+}
+
+text {
+  fill: #000;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+text.shadow {
+    stroke: white;
+    stroke-width: 5px;
+    opacity: 0.9;
+}
+
+div.tooltip { 
+    position: absolute;     
+    text-align: left;     
+    width: 90px;          
+    height: 45px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: dodgerblue; 
+    border: 0.5px;    
+    border-color: #000;
+    border-radius: 8px;     
+    pointer-events: none;     
+}
+
+div.song_description { 
+    position: absolute;     
+    text-align: left;     
+    width: 800px;          
+    height: 50px;         
+    padding: 0 1.5em 0 2em;  
+    font: 12px sans-serif;   
+    pointer-events: none;     
+    font-style: oblique; 
+}
+
+
