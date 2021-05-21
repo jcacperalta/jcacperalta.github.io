@@ -75,7 +75,7 @@
       "datePublished": "2021-05-21 00:00:00 \u002b0800 \u002b08",
       "dateModified" : "2021-05-21 00:00:00 \u002b0800 \u002b08",
       "url" : "https:\/\/jcacperalta.github.io\/blog\/twice-analysis-part2\/",
-      "wordCount" : "2662",
+      "wordCount" : "2782",
       "keywords" : ["twice", "k-pop", "music", "data viz", "network", "Blog"]
     }
   
@@ -152,16 +152,17 @@
 <br>
 <br></p>
 <hr>
-<p>In Part 1 of this project, I have shown you how to visualize line successions&ndash; how song lines are transferred from one member to another&ndash;using a chord diagram. What else could we make out of the dataset? Could we say something more about the structure of TWICE songs?</p>
+<p>In Part 1 of this project, I have shown you how to visualize <strong>line successions</strong>&ndash;how song lines are transferred from one member to another&ndash;using an <strong>interactive chord diagram</strong>. What else could we make out of the dataset? Could we say something more about the structure of TWICE songs?</p>
 <br>
-<p>Below is the completed visualization for the second part of this data science project. This is an interactive network of TWICE&rsquo;s line successions in their Korean singles. I invite you to fiddle with the controls and get to know how it represents each TWICE song.</p>
+<p>Below is the completed visualization for the second part of this data science project. This is an <strong>interactive network of TWICE&rsquo;s line successions in their Korean singles</strong>.</p>
+<p>I invite you to fiddle with the controls and get to know how it represents each TWICE song.</p>
 <br>
 <iframe width="100%" height="870" name="iframe" src="/viz/twice-network-part-2/interactive_network/index.html" frameborder="0" scrolling="no"></iframe>
 <br>
 <br>
 <p>Let me take you through its most important parts.</p>
-<h2 id="what-are-networks-and-whats-so-special-about-line-succession-networks">What are networks? And whats so special about line succession networks?<a class="anchor" href="#what-are-networks-and-whats-so-special-about-line-succession-networks">#</a></h2>
-<p>Its often said that everything in the world is connected. If we observe keenly and long enough, we could form a web of relationships or <strong>networks</strong> of basically any set of objects that we could find.
+<h2 id="what-are-networks">What are networks?<a class="anchor" href="#what-are-networks">#</a></h2>
+<p>Its often said that everything in the world is connected. If we observe keenly and long enough, we could form a web of relationships or <strong>networks</strong> of basically any set of objects we could find.
 <br>
 <br></p>
 <figure>
@@ -173,23 +174,25 @@
 
 <p>In mathematics, networks are represented as a <strong>graph</strong>. The objects are referred to as <strong>nodes</strong> (the circles) and any two nodes are connected by an <strong>edge</strong> (the lines) if they are somehow related to each other.</p>
 <p>Very simple right? It turns out that by using these 2 simple concepts, we could recreate very complex structures from the real world. The field of <strong>network science</strong> studies these relationship structures and had already found numerous applications in many disciplines like computer science (neural networks, internet science), biology (epidemiology), chemistry (molecular stability), economics (trade, political dynasties), sociology (group dynamics) and a lot more!</p>
-<p>Here I have applied it to look for patterns in TWICE&rsquo;s songs.
+<h2 id="what-are-the-properties-of-the-line-succession-network">What are the properties of the line succession network?<a class="anchor" href="#what-are-the-properties-of-the-line-succession-network">#</a></h2>
+<p>Here I have applied network science to look for patterns in TWICE&rsquo;s songs.
 I call the network I have generated the <strong>line succession network</strong>.</p>
-<p>What are the properties of the line succession network?</p>
+<p>What are some of its properties?</p>
 <ol>
+<li>It is a <strong>directed</strong> network. The edges that connect any two members have a direction as indicated by the arrow. For example, the presence of an arrow going from Sana node to Jihyo node means that Sana transfers the line to Jihyo (i.e. Jihyo sings right after Sana) at least once during the song.</li>
+</ol>
+<p>In contrast, the chord diagram in Part 1 of this work is actually an example of an <em>undirected</em> network, since we did not encode there the direction of the succession (i.e. Jihyo-&gt;Sana is the same as Sana-&gt;Jihyo)</p>
+<ol start="2">
 <li>
-<p>It is a <strong>directed</strong> network. The edges that connect any two members have a direction as indicated by the arrow. For example, the presence of an arrow going from Sana to Jihyo means that Sana transfers the line to Jihyo (i.e. Jihyo sings right after Sana) at least once during the song. In contrast, the chord diagram in Part 1 of this work is actually an <em>undirected</em> network, since we did not encode there the direction of the succession (i.e. Jihyo-&gt;Sana is the same as Sana-&gt;Jihyo)</p>
+<p>Edges pointing toward a node could be thought of as <em>inflows</em>, while those from the node pointing outward are the <em>outflows</em>. For line succession networks, since members must transfer a line to another, <strong>there must be an outflow edge for every inflow edge in general</strong> , <em>except for the member starting/ending the song, which would then have 1 less inflow/outflow edge</em>. In the chart above, this isn&rsquo;t always seen because edges are allowed to overlap with each other.</p>
 </li>
 <li>
-<p>Edges pointing toward a node could be thought of as <em>inflows</em>, while those from the node pointing outward are the <em>outflows</em>. For line succession networks, since members must transfer a line to another, <strong>in general, there must be an outflow edge for every inflow edge</strong> , <em>except for the member who&rsquo;s starting/ending the song, which would then have 1 less inflow/outflow edge</em>. In the chart above, this isn&rsquo;t always seen because edges are allowed to overlap with each other.</p>
-</li>
-<li>
-<p>It is a <strong>connected</strong> network. A network is said to be connected if you could reach a node from any other node by tracing the edges in between them. This is true since all members have parts and all parts are connected within the song.</p>
+<p>It is a <strong>connected</strong> network. A network is said to be <em>connected</em> if you could reach any node from any other node by tracing the edges in between them. This is true since all members have parts and all parts are connected within the song.</p>
 </li>
 </ol>
 <h2 id="what-can-we-say-about-twices-line-succession-networks">What can we say about TWICE&rsquo;s line succession networks?<a class="anchor" href="#what-can-we-say-about-twices-line-succession-networks">#</a></h2>
 <p>We have generated line succession networks for each of the 14 TWICE Korean singles so far, plus one that serves as an overall fundamental pattern for all these songs&ndash;the <em>ALL SONGS line succession network.</em></p>
-<h3 id="1-the-all-songs-line-succession-network">1. The ALL SONGS line succession network<a class="anchor" href="#1-the-all-songs-line-succession-network">#</a></h3>
+<p><strong>1. The ALL SONGS line succession network</strong></p>
 <p>The ALL SONGS network represents the top 30% most frequently occurring line succession pairs in TWICE&rsquo;s Korean singles from 2015-2020. This network contains line succession pairs that have occurred for at least 8 times over all TWICE&rsquo;s Korean songs.</p>
 <p>Why 8, you may ask? This threshold could be obtained by looking at the distribution of succession pair counts:</p>
 <br/>
@@ -210,23 +213,24 @@ I call the network I have generated the <strong>line succession network</strong>
         </figcaption>
 </figure>
 
-<p>What are these positions and how were the members grouped according to the ALL SONGS network?</p>
+<p>What are these positions and how is this shown in the ALL SONGS network?</p>
 <ol>
 <li>
-<p><strong>Subvocals/Bridge group</strong> - This group is composed of Sana, Tzuyu, and Mina, who most often sing the song&rsquo;s bridges and verse lines. I actually expected these 3 to have edges to each other, but the Sana-&gt;Mina did not make it to the cut with it having just 7 occurrences.</p>
+<p><strong>Subvocals/Bridge group</strong> - This group is composed of Sana, Tzuyu, and Mina, who most often sing the song&rsquo;s bridges and verse lines. I actually expected these 3 to have edges to each other (i.e. a fully-connected subgraph), but the Sana-&gt;Mina did not make it to the cut because it only had just 7 occurrences.</p>
 </li>
 <li>
-<p><strong>Main vocal/Chorus group</strong> - The power vocalists Nayeon, Jihyo and Jeongyeon form this tight group that lies at the center of the network.</p>
+<p><strong>Main vocal/Chorus group</strong> - The power vocalists Nayeon, Jihyo and Jeongyeon usually sing the chorus and form this tight group that lies at the center of the network.</p>
 </li>
 <li>
-<p><strong>Prechorus group</strong> - Mina and Momo often sing before the chorus, or even after the chorus for the song&rsquo;s hook lines. These two are the non-main vocalists that have most edges to the previous group</p>
+<p><strong>Prechorus group</strong> - Mina and Momo often sing before the chorus, or even after the chorus for the song&rsquo;s hook lines. These two are the non-main vocalists that have most edges to the Main vocal/chorus group</p>
 </li>
 <li>
 <p><strong>Rap group</strong> - Lastly, the group at the far right is composed of the rappers Chaeyoung and Dahyun. Interestingly, according to the ALL SONGS network, the rap group is triggered most often after a Nayeon line. Moreover, following the network, if Dahyun ends the rap, she would most likely turn over the next part to Jihyo, while if Chaeyoung ends the rap, it would be Nayeon who will sing next.</p>
 </li>
 </ol>
-<p>These groupings emerged in the network without either labelling the members with their positions nor tagging the lines to song parts. These line succession pairs just repeat so frequently in the dataset that these expected patterns were bound to appear. In fact, you may try to create a &ldquo;hypothetical&rdquo; TWICE song by starting with one member node and tracing out a sequence of members by following the edges that connect them!</p>
-<h3 id="2-line-succession-networks-of-each-individual-song">2. Line succession networks of each individual song<a class="anchor" href="#2-line-succession-networks-of-each-individual-song">#</a></h3>
+<p>I&rsquo;d like to point out that these groupings emerged in the network without either labelling the members with their positions nor tagging the lines to song parts. These line succession pairs just repeat so frequently in the dataset that these expected patterns were bound to appear.</p>
+<p>In fact, you may try to create a &ldquo;hypothetical&rdquo; TWICE song witht he ALL SONGS network by starting with one member node and tracing out a sequence of members by following the edges that connect them!</p>
+<p><strong>2. Line succession networks of each individual song</strong></p>
 <p>We can better appreciate the diversity of network structures when we look at each of their individual songs.</p>
 <br/>
 <br/>
@@ -240,11 +244,11 @@ I call the network I have generated the <strong>line succession network</strong>
 <br/>
 <br/>
 <p>For instance, the regular-blocked verses of the fairly mellow song Feel Special resulted to a simple network that has sparse edges in between the members. In contrast, the rapid exchanges of lines in the energetic song Heart Shaker produced a densely-connected network that contained some of the rarest succession pairs (e.g. Sana-&gt;Jeongyeon, Chaeyoung-&gt;Momo).</p>
-<p>But despite the differences, both songs still contain edges from the ALL SONGS network. To be exact, about a third to half of all edges in each of TWICE songs are from the ALL SONGS network!</p>
-<p>I have mentioned in Part 1 of this blog that basing a member&rsquo;s &ldquo;relevance&rdquo; just from her total line duration is too simplistic and omits effects that are dependent on how the song is arranged. Now that we have these network representations, could we somehow measure a member&rsquo;s relevance accounting for this complexity?</p>
+<p>But despite the differences, both songs still contain edges from the ALL SONGS network. To be exact, about a third to half of all edges in each of TWICE Korean singles are from the ALL SONGS network!</p>
+<p>I have mentioned in Part 1 of this blog that basing a member&rsquo;s &ldquo;relevance&rdquo; just from her total line duration is too simplistic and omits effects that are dependent on how the song is structured. Now that we have these network representations, could we somehow measure a member&rsquo;s relevance accounting for this complexity?</p>
 <h2 id="how-can-we-measure-relevance-in-a-network">How can we measure relevance in a network?<a class="anchor" href="#how-can-we-measure-relevance-in-a-network">#</a></h2>
-<p>Oftentimes, one of the goals of analyzing a network is to identify nodes that &ldquo;play&rdquo; a bigger role in the structures are therefore more important compared to other nodes. A network&rsquo;s <em>centrality measures</em> tries to quantify this.</p>
-<p>There are various centrality measures that are developed to measure different nuances of &ldquo;importance&rdquo;, but we only used 2 kinds here in this post: betwenness centrality and eigenvector centrality.</p>
+<p>Oftentimes, one of the goals of analyzing a network is to identify nodes that &ldquo;play&rdquo; a bigger role and are therefore more important compared to other nodes. A network&rsquo;s <strong>centrality measure</strong> tries to quantify this.</p>
+<p>There are various centrality measures developed to measure different nuances of &ldquo;importance&rdquo;, but we only used 2 kinds here in this post: <em>betwenness centrality</em> and <em>eigenvector centrality</em>.</p>
 <p>As defined by Zinoviev (2018):</p>
 <ul>
 <li>
@@ -264,16 +268,15 @@ the node functions as a go-between (thus the name) and could serve to connect an
 <p>       
   1. The betweenness centrality of a member measures the extent of her <b>connective role</b> in the song, i.e. a high betweenness member would precede and succeed the most number of members, serving as a bridge to bind the song together. </b> 
 </p>
-<br>
 </div>
 <br>
-Lets take the simplest network, *Feel Special*, as an example to illustrate this.
+<p>Lets take the simplest song network <em>Feel Special</em> as an example to illustrate this.</p>
 <ul>
 <li>
-<p>Jihyo comes 1st in betweenness centrality because she occupies the middlemost position in the network and thus get often crossed when paths are drawn to connect any two other members. Her role is central enough that when her node is removed, 2 members, Jeongyeon and Dahyun, would be completely disconnected from the network.</p>
+<p>Jihyo comes 1st in betweenness centrality because she occupies the middlemost position in the network and thus gets often crossed when paths are drawn to connect any two other members. Her role is central enough that when her node is removed, 2 members, Jeongyeon and Dahyun, would be completely disconnected from the network.</p>
 </li>
 <li>
-<p>On the other hand, Chaeyoung occurs at last place and actually has betweenness centrality value of 0. This is because her only line is at the beginning of the song and does not serve to connect any 2 members aside from the member next to her (Tzuyu).
+<p>On the other hand, Chaeyoung occurs at last place and actually has a betweenness centrality value of 0. This is because her only line is at the beginning of the song and does not serve to connect any 2 members aside from the member next to her (Tzuyu).
 <br>
 <br>
 <figure>
@@ -288,7 +291,7 @@ Lets take the simplest network, *Feel Special*, as an example to illustrate this
 <div style="background-color:#f7f7f7" style="margin-left:15px">
 <br>
 <p>       
-  2. The eigenvector centrality of a member indicates whether she has a  <b>dominant role</b> i.e. directly precedes/succeeds other central members or an <b>accent role</b> which would mean she is less connected but would serve as some sort of deviant position to "spice up" the song.</b> 
+  2. The eigenvector centrality of a member indicates whether she has a  <b>dominant role</b>, which would mean she directly precedes/succeeds other central members or an <b>accent role</b> which would mean she is less connected but would serve as some sort of atypical position to "spice up" the song.</b> 
 </p>
 <br>
 <br>
@@ -296,13 +299,15 @@ Lets take the simplest network, *Feel Special*, as an example to illustrate this
 <p>Again, using <em>Feel Special</em>:</p>
 <ul>
 <li>
-<p>Nayeon has top eigenvector centrality because she has 2 inflows from relatively high eigenvector centrality Jihyo (2nd) and Sana (6th) and just 1 distinct (but repeated) outflow to Mina (4th). She does serve a dominant role in this song since these edges were from line transfers to her chorus lines.</p>
+<p>Nayeon has top eigenvector centrality because she has 2 inflows from relatively high eigenvector centrality members Jihyo (2nd) and Sana (6th) and just 1 distinct (but repeated) outflow to Mina (4th). She does serve a dominant role in this song since these edges were from those who precede her chorus lines.</p>
 </li>
 <li>
-<p>Meanwhile, Chaeyoung only has one edge and that edge is an outflow. Since no one connects towards her, her eigenvector centrality is 0. Assigning her to open the song is also quite rare and could likely put there as an accent to highlight the first verse.</p>
+<p>Meanwhile, Chaeyoung only has one edge, and that edge is an outflow. Since no one connects <em>towards</em> her, her eigenvector centrality is 0. Assigning her to open the song is quite rare and could likely put there as an accent to highlight the first verse.</p>
 </li>
 </ul>
 <h2 id="what-can-we-say-about-the-centrality-metrics-of-each-member">What can we say about the centrality metrics of each member?<a class="anchor" href="#what-can-we-say-about-the-centrality-metrics-of-each-member">#</a></h2>
+<p>We could look at the range of each of the members centrality metrics across all their Korean singles.</p>
+<p><strong>1. Betweenness Centrality</strong></p>
 <br>
 <figure>
     <img src="/images/blog/twice-network-part2/twice_btwn_c_ridgeplot.png"
@@ -313,18 +318,20 @@ Lets take the simplest network, *Feel Special*, as an example to illustrate this
 
 <ul>
 <li>
-<p>From the betweenness centrality distribution above, we could see that Jihyo, Nayeon and Mina has the most connective role for all of their Korean singles so far. These 3 also have the most lines, giving them more opportunities to bridge any 2 other member parts.</p>
+<p>From the betweenness centrality distribution above, we could see that Jihyo, Nayeon and Mina has the most connective role for all of their Korean singles so far. These 3 also have the most lines, giving them more opportunities to go in-between any 2 other member parts.</p>
 </li>
 <li>
-<p>Tzuyu occuring at 4th place here is quite a suprise despite her total line durations are less than half of Nayeon&rsquo;s and Jihyo&rsquo;s, and a fifth less than Mina&rsquo;s.</p>
+<p>Tzuyu occuring at 4th place here is quite a suprise despite the fact that her total line duration is less than half of Nayeon&rsquo;s and Jihyo&rsquo;s, and a fifth less than Mina&rsquo;s.</p>
 </li>
 <li>
-<p>The rap group Chaeyoung and Dahyun,and also Momo, share almost similar metric medians to Tzuyu, but with noticeably more left-skewed</p>
+<p>Momo and the rap group Chaeyoung and Dahyun, share almost similar metric medians to Tzuyu, but with noticeably more left-skewed distributions.</p>
 </li>
 <li>
-<p>Lastly, Sana and Jeongyeon has the least betweenness centrality values and thus least connective roles for almost all the songs.</p>
+<p>Lastly, Sana and Jeongyeon have the least betweenness centrality values and thus least connective roles for almost all the songs.</p>
 </li>
 </ul>
+<p><strong>2. Eigenvector Centrality</strong></p>
+<br>
 <figure>
     <img src="/images/blog/twice-network-part2/twice_eig_c_ridgeplot.png"
          alt="Eigenvector centrality distributions of each TWICE member across all their Korean singles. The white box locates the median of the distribution" width="auto" height="300px"/> <figcaption>
@@ -334,29 +341,33 @@ Lets take the simplest network, *Feel Special*, as an example to illustrate this
 
 <ul>
 <li>
-<p>For eigenvector centrality, we could see again that Jihyo, Nayeon and Mina most likely had the most dominant roles in their songs.</p>
+<p>According to their eigenvector centrality measures, we could see again that Jihyo, Nayeon and Mina had the most dominant roles in their songs.</p>
 </li>
 <li>
-<p>Suprisingly, Sana now comes at 4th place for this metric. This is due to her coming next to the parts of the more dominant Nayeon, Jihyo or Mina, although her connections isnt dense enough to also merit a connective role</p>
+<p>Suprisingly, Sana now comes at 4th place for this metric. This is due to her often preceding/coming next to the parts of the more dominant Nayeon, Jihyo or Mina, although her connections isnt that many to also merit a connective role.</p>
 </li>
 <li>
-<p>Momo, Dahyun, Tzuyu and Chaeyoung have similar distribution medians at the middle of the pack. Chaeyoung in particular has a an almost bimodal distribution shape, which indicates that she serves dominant roles for a few songs.</p>
+<p>Momo, Dahyun, Tzuyu and Chaeyoung have similar distribution medians at the middle of the pack. Chaeyoung, in particular, has a bimodal distribution shape, which indicates that she serves dominant roles for a few songs.</p>
 </li>
 <li>
-<p>Lastly, Jeongyeon also ranks the least in eigenvector centrality despite ranking 4th in total line duration. As Jeongyeon&rsquo;s voice is quite rich and strong, she is often used to accent a chorus line and thus would sparingly connect to other members, dominant or not.</p>
+<p>Lastly, Jeongyeon ranks the least in eigenvector centrality despite ranking 4th in total line duration. As Jeongyeon&rsquo;s voice is quite rich and strong, she is often used to accent a chorus line and thus would sparingly connect to other members, dominant or not.</p>
 </li>
 </ul>
 <h2 id="what-song-did-each-member-top-in-terms-of-centrality">What song did each member top in terms of centrality?<a class="anchor" href="#what-song-did-each-member-top-in-terms-of-centrality">#</a></h2>
 <p>We could also look at each member&rsquo;s best metrics and try to validate as a listener whether she did serve a relevant role in that particular song.</p>
 <br>
+<br>
+<p><em>TWICE member&rsquo;s top songs, according to their centrality measures</em>
+<br>
+<br></p>
 <table>
 <thead>
 <tr>
 <th>Member</th>
 <th>eig_c (rank)</th>
-<th>Song</th>
+<th>Top Song</th>
 <th>btwn_c (rank)</th>
-<th>Song</th>
+<th>Top Song</th>
 </tr>
 </thead>
 <tbody>
@@ -427,36 +438,29 @@ Lets take the simplest network, *Feel Special*, as an example to illustrate this
 </table>
 <ul>
 <li>
-<p>Sometimes, it all boils down to the number (not duration!) of lines in the song. For instance, Chaeyoung&rsquo;s highest ranked song for both metrics is <em>Fancy</em> because she delivered the iconic hook line &ldquo;Fancy, ooh!&rdquo; there. Meanwhile, Jihyo&rsquo;s highest rank song for both metrics is their debut single, <em>Like Ooh Ahh</em>, where she had the most lines. In a similar manner, Nayeon also had her most dominant role in <em>What is Love</em> and <em>Cheer Up</em>.</p>
+<p>Sometimes, it all boils down to the number (not duration!) of lines in the song. For instance, Chaeyoung&rsquo;s highest ranked song for both metrics is <em>Fancy</em> because she delivered the repeating iconic hook line &ldquo;Fancy, ooh!&rdquo; there. Meanwhile, Jihyo&rsquo;s highest rank song for both metrics is their debut single, <em>Like Ooh Ahh</em>, where she took the most lines. In a similar manner, Nayeon also had her most dominant role in <em>What is Love</em> and <em>Cheer Up</em>.</p>
 </li>
 <li>
 <p>The tempo and beat style of the song part also matters. Dahyun&rsquo;s best metrics occur during her fast raps in <em>Cry For Me</em> and iconic &ldquo;neomuhae&rdquo; hook in <em>TT</em>. Jeongyeon also had relatively faster and more back-and-forth parts in <em>Signal</em> and <em>Yes Or Yes</em>.</p>
 </li>
 <li>
-<p>But song part placement is also important&ndash;prechorus lines often translate to dominant and connective roles. Momo played her most dominant and connective role for her prechorus lines in <em>Feel Special</em> (the only part that repeats aside from the chorus). Tzuyu also had her most dominant song in <em>Feel Special</em>, as she was also singing the prechorus lines there with Momo, and served her most connective role in <em>Heart Shaker</em>&rsquo;s prechorus (and chorus,too). The same can be said for Mina in <em>Cheer Up</em> and <em>Yes Or Yes</em>.</p>
+<p>But song part placement is also important. In particular, prechorus lines often translate to dominant and connective roles. Momo played her most dominant and connective role for her prechorus lines in <em>Feel Special</em> (the only part that repeats aside from the chorus). Tzuyu also had her most dominant song in <em>Feel Special</em>, as she was also singing the prechorus lines there with Momo, and served her most connective role in <em>Heart Shaker</em>&rsquo;s prechorus (and chorus too). The same can be said for Mina in <em>Cheer Up</em> and <em>Yes Or Yes</em>.</p>
 </li>
 </ul>
 <h3 id="in-summary">In summary<a class="anchor" href="#in-summary">#</a></h3>
-<ul>
-<li>
 <p>We have shown that a song performed by a group could be represented as a graph through the line succession network.</p>
-</li>
-<li>
-<p>As the network that represents the most frequently used succession patterns of a group, ALL SONGS show most distinctive parts of a TWICE song, and around a third to half of the edges that comprise it persists in all TWICE songs so far.</p>
-</li>
-<li>
-<p>The betweenness and eigenvector centrality metric, when applied in line succession networks, can be thought of as a measure of the strength of a member&rsquo;s connective and dominant/accent roles, respectively.</p>
-</li>
-<li>
-<p>Although members with longer lines definitely have an advantage, line duration does not correspond with higher centrality metrics in a song. As we have seen, it all depends on the structure of the network.</p>
-</li>
-</ul>
+<p>As the network that represents the most frequently used succession patterns of a group, the ALL SONGS network show most distinctive parts of a TWICE song, and around a third to half of the edges that comprise it persists in all TWICE songs so far.</p>
+<p>The betweenness and eigenvector centrality metrics, when applied in line succession networks, can be thought of as a measure of the strength of a member&rsquo;s connective and dominant/accent roles, respectively.</p>
+<p>Although members with longer lines definitely have an advantage, line duration does not correspond with higher centrality metrics in a song. As we have seen, it all depends on the structure of the song&rsquo;s network.</p>
 <h3 id="where-can-i-take-this-idea-further">Where can I take this idea further?<a class="anchor" href="#where-can-i-take-this-idea-further">#</a></h3>
-<p>I often wonder why seldom see directed networks in use in data science projects, which is understandable since ordered relations are quite tricky to find. But as we have done for the case of TWICE songs, it could be as simple as consecutive occurrence. This is important captures what order people arrange things in their minds.</p>
-<p>For those who want to create a network to analyze, I invite to think of ways to encode <em>direction</em> in your edges&ndash;you may be suprised with the results it might give you!</p>
-<p>Thanks and see you again in the next blog!
+<p>The same techniques can be applied when you replace the TWICE songs with basically any set of objects which relationships you could map out in a network (e.g. e-commerce products, protein sequences, infection spreaders, etc)</p>
+<p>Still, I often wonder why seldom see directed networks in use in data science projects, which is understandable since ordered relations are quite tricky to find. But as we have done for the case of TWICE songs, it could be as simple as encoding <em>consecutive occurrence</em>. This is important because direction captures what order people arrange things in their minds, and that in itself, is valuable information!</p>
+<p>For those who want to do a similar analysis using networks, I invite to think of ways to encode <em>direction</em> in creating your network&rsquo;s edges&ndash;you may be suprised with the results it might give you.</p>
 <br>
-<br></p>
+<br>
+Thanks and see you again in the next blog!
+<br>
+<br>
 <h5 id="references">References</h5>
 <p>Zinoviev, D. (2018). Understanding Social Networks. In Complex network analysis in Python: Recognize-construct-visualize-analyze-interpret (pp. 57-58). Pragmatic Bookshelf.</p>
 
