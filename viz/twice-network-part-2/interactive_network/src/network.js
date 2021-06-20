@@ -17,14 +17,14 @@ function network(songFile) {
         "HeartShaker.csv","KnockKnock.csv","Likey.csv",
         "DanceTheNightAway.csv","WhatIsLove.csv","YesOrYes.csv",
         "Fancy.csv","FeelSpecial.csv","More&More.csv",
-        "ICantStopMe.csv","CryForMe.csv"]
+        "ICantStopMe.csv","CryForMe.csv","AlcoholFree.csv"]
 
 
     var songNames = ["ALL SONGS (2015-2020)","Like Ooh Ahh (2015)","Cheer Up (2016)",
         "TT (2016)", "Heart Shaker (2017)","Knock Knock (2017)",
         "Likey (2017)","Dance The Night Away (2018)","What Is Love (2018) ",
         "Yes or Yes (2018)","Fancy (2019) ","Feel Special (2019)",
-        "More&More (2020) ","I Can't Stop Me (2020) ","Cry For Me (2020) "]
+        "More&More (2020) ","I Can't Stop Me (2020) ","Cry For Me (2020) ","Alcohol Free (2021) "]
 
     var findSongName = d3.scale.ordinal().domain(songFiles)
                       .range(songNames)
