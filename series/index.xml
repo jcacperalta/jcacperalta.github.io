@@ -6,6 +6,10 @@
     <description>Recent content in Series on jcperalta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020</copyright><atom:link href="https://jcacperalta.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2020</copyright>
+    
+	<atom:link href="https://jcacperalta.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

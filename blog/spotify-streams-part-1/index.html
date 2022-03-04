@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <title>How many streams does a track need to top the PH Spotify charts? # DataViz | jcperalta</title>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script type="text/javascript">
+    import Typewriter from 'typewriter-effect/dist/core';
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="An analysis of achieving the top position in the PH Spotify charts from 2017-2022">
+  <meta name="keywords" content="spotify , music , philippines , time series , data viz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight+50 + 'px';
+    }
+  </script>
+
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/post.min.c870668c660bde4ee5bb94c27142433b642d622ea3c0bf198324bee8798a4712.css" integrity="sha256-yHBmjGYL3k7lu5TCcUJDO2QtYi6jwL8ZgyS&#43;6HmKRxI="/>
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jcacperalta.github.io"
+      },
+      "articleSection" : "blog",
+      "name" : "How many streams does a track need to top the PH Spotify charts? # DataViz",
+      "headline" : "How many streams does a track need to top the PH Spotify charts? # DataViz",
+      "description" : "An analysis of achieving the top position in the PH Spotify charts from 2017-2022",
+      "inLanguage" : "en-US",
+      "author" : "jcperalta",
+      "creator" : "jcperalta",
+      "publisher": "jcperalta",
+      "accountablePerson" : "jcperalta",
+      "copyrightHolder" : "jcperalta",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-02-08 00:00:00 \x2b0800 \x2b08",
+      "dateModified" : "2022-02-08 00:00:00 \x2b0800 \x2b08",
+      "url" : "https:\/\/jcacperalta.github.io\/blog\/spotify-streams-part-1\/",
+      "wordCount" : "2325",
+      "keywords" : ["spotify", "music", "philippines", "time series", "data viz", "Blog"]
+    }
+  
+  </script>
+<meta property="og:title" content="How many streams does a track need to top the PH Spotify charts? # DataViz" />
+<meta property="og:description" content="An analysis of achieving the top position in the PH Spotify charts from 2017-2022" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jcacperalta.github.io/blog/spotify-streams-part-1/" />
+<meta property="article:published_time" content="2022-02-08T00:00:00+08:00" />
+<meta property="article:modified_time" content="2022-02-08T00:00:00+08:00" /><meta property="og:site_name" content="jcperalta" />
+
+
+<meta property="og:image" content="https://jcacperalta.github.io/images/blog/spotify-streams-part1/spotify_streams_part1_preview.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="hhttps://jcacperalta.github.io/images/blog/spotify-streams-part1/spotify_streams_part1_preview.jpg"/>
+
+
+
+<meta name="twitter:title" content="How many streams does a track need to top the PH Spotify charts? # DataViz"/>
+<meta name="twitter:description" content="An analysis of achieving the top position in the PH Spotify charts from 2017-2022"/>
+
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/works">works</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">How many streams does a track need to top the PH Spotify charts? # DataViz<span class="fancy">.</span></h1>
+            
+            <time datetime="2022-03-04 00:00:00 &#43;0800 &#43;08" class="post__date"
+            >Mar 4 2022</time>
+            
+          </header>
+          <article class="post__content">
+              
+<p><code>Fork this project in Github </code><a href="https://github.com/user/jcacperalta/spotify_streams_analysis">here</a>
+<br>
+<code>Get the data in Kaggle </code><a href="https://www.kaggle.com/jcacperalta/spotify-daily-top-200-ph">here</a>
+<br>
+<br></p>
+<hr>
+<p>Ever since I was doing my masters back in 2016, I have used the app Spotify for my daily music needs (this is not sponsored! haha). Spotify, as it turns out, hosts the <a href="https://spotifycharts.com/regional">streams data of the songs that make in their charts</a> and made a <a href="https://developer.spotify.com/documentation/web-api/">Web API</a> to get data on any of the songs and artists listed in their platform.</p>
+<p>This is very interesting for me so I downloaded Spotify&rsquo;s available chart data over the past months. I have been using it for <a href="https://www.facebook.com/watch/?v=249220816819278">teaching data science</a> and have been asking students to make projects out of it— and I thought, maybe I should also give it a try?</p>
+<p>In this post, I analyzed the Daily Spotify Top 200 charts in the Philippines and get to know what it takes to take the chart&rsquo;s top position.</p>
+<br>
+<p>My answer to this is shown below. To get the Top 1 position, the track must get streams equal to or higher than goal set by the green line I called <b>G₁</b>, defined as <strong>1 stream more than the most recent streams obtained by the Top 2 position</strong>.</p>
+<p>I invite you to hover on the line chart to check out the top track and the goal setting track for a particular day, and fiddle with the controls to focus on a period of interest.
+<br>
+<br>
+<br></p>
+<iframe width="100%" height="400" name="iframe" src="/viz/spotify-streams-part1/streams_to_beat.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<h3 id="what-can-we-say-about-the-charts">What can we say about the charts?<a class="anchor" href="#what-can-we-say-about-the-charts">#</a></h3>
+<p>Here are some of the insights from the data and interactive chart:</p>
+<h4 id="-the-goal-streams-g-needed-to-get-top-1-has-shown-more-variance-in-the-past-2-years">• The goal streams G₁ needed to get Top 1 has shown more variance in the past 2 years</h4>
+<ul>
+<li>
+<p>Based on G₁, tracks need relatively higher streams during first half of 2017 compared to most other data points. This is likely because fewer and only more famous artists are in the platform at that time.</p>
+</li>
+<li>
+<p>On 2nd half of 2017 up to more than 1st half of 2019, we now see a lower and fairly constant goal as more artists enter and take a share of the total market streams.</p>
+</li>
+<li>
+<p>During Q4 2018 up to Q1 2020, we see that the G₁ almost increased by 30% that of previous years, and has roughly stayed on that level.</p>
+</li>
+<li>
+<p>We see this growth halted during Mar-May 2020, around the same time during the first nationwide strict lockdowns. G₁ was reduced to its level in 2018. Strange, because you&rsquo;ll expect people to listen to more music during the lockdown, right? The connection of the music streaming market to the pandemic still needs to be studied!</p>
+</li>
+<li>
+<p>Come Jun 2020, G₁ became less stable and noted many record highs compared to past years, which coincides with song releases of very famous artists like BTS, Taylor Swift, BLACKPINK, Olivia Rodrigo, and Arthur Nery.</p>
+</li>
+</ul>
+<h4 id="-pre-2020-tracks-hold-longest-top-1-streak">• Pre 2020 tracks hold longest Top 1 streak</h4>
+<p>The table below lists the tracks that recorded the longest streak as Top 1 in the PH Spotify charts.</p>
+<br>
+<iframe width="100%" height="300" name="iframe" src="/viz/spotify-streams-part1/top1_streak.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<br>
+<ul>
+<li>
+<p>The top 5 longest streaks kept the Top 1 position for more than 1 month, with the top streaking, <em>Luis Fonsi - Despacito</em> staying in the top position for almost 3 months in 2017!</p>
+</li>
+<li>
+<p>Most of the tracks that have kept the Top 1 position for at least a month were released in Spotify during 2019 or older, when the market had less participants.</p>
+</li>
+<li>
+<p>We also see more recent viral hits like <em>BTS - Butter</em>, <em>Olivia Rodrigo- drivers license</em> and <em>The Kid LAROI - STAY (with Justin Bieber)</em> top the charts and streak just after they are released.</p>
+</li>
+</ul>
+<h4 id="-more-landslide-wins-occured-in-2021-than-past-years">• More landslide wins occured in 2021 than past years</h4>
+<p>Depeding on the market conditions, a track can win the Top 1 by a huge or small margin from the Top 2 track.</p>
+<p>If we define a <em>landslide</em> win to be the case when the Top 1 won by &gt; 30% and conversely, <em>tight match</em> when it won by &lt; 5%, and count these win types per year, we will arrive at the following chart:</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part1/landslide_v_tight_battle.png" /></p>
+<figcaption><p>Frequency of landslide and tight battles for the top 1 position in the PH Spotify market</p>
+</figcaption>
+<ul>
+<li>2021 has the most lanslide wins and least tight matches out of all years, which could be due to the big, viral releases we have seen in the Top 1 streak table. The same trend is present in 2019, and to a lesser extent, 2017.</li>
+<li>On the other hand 2020 and 2018 saw the opposite trend where more Top 1 tracks won by a small margin.</li>
+</ul>
+<p>We can generalize this further by not limiting to these two categories and looking at the full distribution of the ratio of the daily Top 1 to Top 2 streams per year:
+<img class="special-img-class" src="/images/blog/spotify-streams-part1/top1_to_top2_ratio_distribution.png" /></p>
+<figcaption><p>Yearly distribution of Top 1 to Top 2 streams ratio in the PH Spotify market. The square marker represents the median of the distribution; the circle, the mean; and the short vertical line, the 25th and 75th percentile. </p>
+</figcaption>
+<ul>
+<li>Based on the distributions, it seems like most of the Top 1 songs had a 10%-20% streams lead compared to Top 2 songs for 2017-2020.</li>
+<li>We can also see the relatively more frequent landslide wins (ratio &gt; 1.3) during 2017 and 2019 at the minor peaks of the distribution over the ratio range 1.5-1.7.</li>
+<li>Interestingly, 2021 had this bimodal, tail-heavy distribution that is different from the other years. The first peak corresponds to Top 1 tracks with a tighter ~10% lead, while the second is a wider one that lead by a larger margin of ~30-60%.</li>
+</ul>
+<p><u>Landslide wins</u></p>
+<p>To show examples of landslide wins, here are 10 Top 1 tracks that had the largest lead with the Top 2 track:</p>
+<br>
+<iframe width="100%" height="300" name="iframe" src="/viz/spotify-streams-part1/landslide_wins.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<br>
+<p>These tracks really dominated the charts with at least <em>double</em> the streams of the Top 2 track for that day.</p>
+<ul>
+<li>Only 2 artists made this list, Arthur Nery and BTS, and all these tracks were released and charted during 2020-2021.</li>
+</ul>
+<p><u>Tight matches</u></p>
+<p>On the other hand, below are 10 Top 1 tracks that had the tightest lead with the Top 2 track:
+<br>
+<br></p>
+<iframe width="100%" height="300" name="iframe" src="/viz/spotify-streams-part1/tight_battles.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<br>
+These tracks beat the Top 2 track only by a few hundreds of streams (<1%). 
+<ul>
+<li>
+<p>3/10 of these entries are <em>Ariana Grande- thank u next</em> and <em>juan karlos- Buwan</em> swapping positions in the charts with such tight margins.</p>
+</li>
+<li>
+<p>Also in this list were competitions between international artists (e.g. The Kid LAROI vs LISA), while others were from OPM artists (e.g. Ben&amp;Ben vs Matthaios).</p>
+</li>
+</ul>
+<h3 id="but-firsthow-was-the-target-metric-g-defined">But first—how was the target metric G₁ defined?<a class="anchor" href="#but-firsthow-was-the-target-metric-g-defined">#</a></h3>
+<p>To achieve the Top 1 position in the chart, you will need to garner at least 1 stream more than the streams garnered by the Top 2 position.</p>
+<p>BUT—getting the actual target goal streams is not possible in real-time because Spotify only releases the charts data 2 days from the present day. Thus, to address this latency, we need to estimate it using streams from Top 2 positions of the days prior.</p>
+<p>Here is how we defined the metric G₁:</p>
+<br>
+<div style="background-color:#f7f7f7" style="margin-left:15px">
+<br>
+<p>       
+  <b>DEFINITION:</b>,The <i>target goal streams to achieve the Spotify Top 1 position</i> <b>G₁</b> is the <i>record maximum</i> streams achieved by all the Top 2 tracks for the <i>past 1 week</i>, <u>plus one more stream</u>.
+</p>
+<br>
+</div>
+<p>Below is a working example of computing G₁ for target date 2018-09-22:
+<br>
+<br></p>
+<iframe width="100%" height="300" name="iframe" src="/viz/spotify-streams-part1/g1_sample_computation.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<br>
+<ul>
+<li>According to the goal definition, we look back in the data to get the streams for tracks that got the Top 2 position for the past 7 days (2018-09-15 to 2018-09-21)</li>
+<li>Among those in the list, we get the Top 2 track with the most streams. In this case, it is <em>Ben&amp;Ben - Kathang Isip</em> on 2018-09-19, which got 152797 streams.</li>
+<li>To achieve the top spot, the estimated streams needed to beat it is 1 more than the maximum top 2 streams for the past 7 days. Thus, G₁ = 152797 + 1 = 152798.</li>
+<li>CHECK: Indeed for 2018-09-22 the track which got the top position, <em>December Avenue-Kung &lsquo;Di Rin Lang Ikaw</em>, has exceeded G₁, with 174111 streams.</li>
+</ul>
+<p>When data is already available, we can simulate this lookback process for G₁ very easily by using <code>pandas</code>'s <code>rolling().max()</code> method.</p>
+<h3 id="how-reliable-is-g-as-a-streams-target-for-the-top-1-chart-position">How reliable is G₁ as a streams target for the Top 1 chart position?<a class="anchor" href="#how-reliable-is-g-as-a-streams-target-for-the-top-1-chart-position">#</a></h3>
+<p>Being the skeptic that I am, I put this metric to test by analyzing how it performs as a target for the Top 1 position. Here is the same ratio distribution plot, but this time I compare the Top 1 vs G₁ streams.</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part1/top1_to_g1_ratio_distribution.png" /></p>
+<figcaption><p>Yearly distribution of Top 1 to G₁ streams ratio in the PH Spotify market. The square marker represents the median of the distribution; the circle, the mean; and the short vertical line, the 25th and 75th percentile. </p>
+</figcaption>
+<p>It turns out, taken all the years, some 24.7% of the Top 1 tracks got streams which was <strong>lower</strong> than G₁!</p>
+<p>What is the reason for this? It is because for these days, G₁ can also <em>overestimate</em> the required streams to Top 1 tracks, because the most streamed Top 2 track for the previous week was too high—high enough to get it the Top 1 position had it performed the same this week.</p>
+<p>Here are some examples of songs that achieved Top 1 but didn&rsquo;t exceed G₁—achieving only half of it in fact!</p>
+<br>
+<iframe width="100%" height="300" name="iframe" src="/viz/spotify-streams-part1/below_g1.html" frameborder="0" scrolling="yes"></iframe>
+<br>
+<br>
+<p>Here we have some very interesting cases:</p>
+<ul>
+<li>
+<p>6/10 of the entries in the table above refers to the G₁ streams based from <em>Ariana Grande - Santa Tell Me</em> right before the Christmas week. The tracks that got Top 1 without beating the goal based on this track are either (1) another Christmas song (e.g. <em>Mariah Carey - All I Want for Christmas Is You</em>) or (2) another one of Ariana&rsquo;s songs, <em>34+35</em>. This case highlights the effect of holidays in our collective listening habits.</p>
+</li>
+<li>
+<p>Sometimes, a track can set the G₁ streams goal, only reach half of it, and yet still achieve the Top 1 position. This is the case for track <em>Taylor Swift - Cardigan</em> during Jul 29-30, 2020. This happens during the rare case when the latest Top 2 track loses streams faster than the Top 1 track.</p>
+</li>
+</ul>
+<p><u>Error analysis</u></p>
+<p>This 24.7% of all Top 1 tracks that bypasses the goal set by G₁ may seem to dent its purpose, but when we look at the cummulative proportion of the streams ratio of these tracks in the plot below:</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part1/top1_below_G1.png" /></p>
+<figcaption><p>Cummulative proportion of the Top 1 to G₁ streams ratio for Top 1 tracks whose streams were below G₁</p>
+</figcaption>
+<br>
+we see that only 20% of this 25% (i.e. 5% of all Top 1 tracks) are below 10% of the G₁ for that day. Thus, if we allow a 10% margin for G₁, <u> it accurately predicted the Top 1 streams goal by about 95% of all days considered.</u> This is quite satisfactory for me.
+<h3 id="is-7-days-good-enough-as-a-lookback-period-for-g">Is 7 days good enough as a lookback period for G₁?<a class="anchor" href="#is-7-days-good-enough-as-a-lookback-period-for-g">#</a></h3>
+<p>The window size used to take in historical data is crucial in any forecasting exercise, so I tested a lookback period ranging from 1 to 90 days from the target date.</p>
+<p>I plot the proportion of Top 1 tracks with streams above G₁ below:</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part1/window_for_G1.png" /></p>
+<figcaption><p>Proportion of Top 1 tracks greater than G₁ as function of the lookback period length in days</p>
+</figcaption>
+<p>A lookback period of &lt;3 days practically guarantees the G₁ metric&rsquo;s success with accuracy of &gt;98%. However, a lookback peirod this short might not work when deployed because of Spotify&rsquo;s chart data latency. The accuracy drops relatively steeply until around 25-30 days and continues to decrease monotonically but to a less extent.</p>
+<p>I could have chosen 4-6 days but ended up picking a slightly larger period of 7 days because of the stronger smoothing of the G₁ curve (makes it look neater!), and also the practicality of just looking at a week&rsquo;s worth of data.</p>
+<h3 id="where-can-we-take-this-further">Where can we take this further?<a class="anchor" href="#where-can-we-take-this-further">#</a></h3>
+<p>• <u>G metric for each chart position</u></p>
+<p>If you sensed where I was headed by my variable format for the Top 1 streams goal, G₁, this can be generalized to set <em>a goal for any chart position i</em>, <strong>Gᵢ</strong> (hence, the subscript!).</p>
+<p>For example, G₂ is the goal for the Top 2 position, which will be based on the streams of the most recent Top 3 position, and so on.</p>
+<p>• <u>Exploring streams inflation</u></p>
+<p>You might also be reminded of FOREX/stocks charts when you looked at the Spotify streams chart above. I took note of that as a simple resemblance—but then it hit me that streams can also be thought of as a <em>currency</em> in the music streaming market.</p>
+<p>Streams decide which position the track will reach in the charts, and like real currency, the ability of a stream to take a track to a position—its position <em>&ldquo;purchasing power&rdquo;</em>—also changes with time.</p>
+<p>To illustrate this, the streams in 2017 that would have gotten you to the Top 1 position may not get the track to the same position today.</p>
+<p>Moreover, a Top 1 position achieved during days when very famous artists are competing is not the same as a Top 1 position on days when there are no new releases from them.</p>
+<p>This raises the question, could there be some of <u>inflation index</u> that we can define to determine the relative value of a stream compared to a basis period? And can this index be used to correct the current streams value to uncover the real growth of a track in the streaming market?</p>
+<p>I will explore this idea in Part 2 of this topic.</p>
+<h3 id="where-did-the-data-come-from">Where did the data come from?<a class="anchor" href="#where-did-the-data-come-from">#</a></h3>
+<p>For this analysis, I used the <a href="https://www.kaggle.com/jcacperalta/spotify-daily-top-200-ph">data I collected</a> from <a href="https://spotifycharts.com/regional">Spotify charts</a>.</p>
+<p>This is relatively lighter data gathering compared to my previous posts. I purposefully did not get any more data for this to train myself to extract insights as rich as possible from limited data.</p>
+<h3 id="what-are-the-tools-i-used">What are the tools I used?<a class="anchor" href="#what-are-the-tools-i-used">#</a></h3>
+<p>I used <code>pandas</code> to read and analyze the dataset, <code>matplotlib</code> and <code>seaborn</code> to make some basic plots, and the line chart in <code>bokeh</code> to make the final interactive chart.</p>
+<p>I invite you to look at and try out the jupyter notebook in this <a href="https://github.com/user/jcacperalta/spotify_streams_analysis">Github repo</a>.</p>
+<p>Thanks so much for reading!
+<br>
+<br></p>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+ 
+          
+            <div class="pagination">
+  
+    <a class="pagination__item" href="https://jcacperalta.github.io/blog/twice-analysis-part2/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">#kpop Analysis PART 2: What can we learn about TWICE&#39;s line succession networks? #DataViz</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="GitHub"
+         style="background-image: url(/images/social/github.svg)" 
+         href="https://github.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Email"
+         style="background-image: url(/images/social/email.svg)" 
+         href="mailto:jcacperalta@gmail.com"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="LinkedIn"
+         style="background-image: url(/images/social/linkedin.svg)" 
+         href="https://linkedin.com/in/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Scholar"
+         style="background-image: url(/images/social/scholar.svg)" 
+         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2020</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

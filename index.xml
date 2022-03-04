@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Fri, 21 May 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How many streams does a track need to top the PH Spotify charts? # DataViz</title>
+      <link>https://jcacperalta.github.io/blog/spotify-streams-part-1/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/spotify-streams-part-1/</guid>
+      <description>An analysis of achieving the top position in the PH Spotify charts from 2017-2022</description>
+    </item>
+    
     <item>
       <title>#kpop Analysis PART 2: What can we learn about TWICE&#39;s line succession networks? #DataViz</title>
       <link>https://jcacperalta.github.io/blog/twice-analysis-part2/</link>
