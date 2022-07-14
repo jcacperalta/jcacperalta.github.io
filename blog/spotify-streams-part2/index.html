@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <title>Inflation and inequality in the music streaming market | jcperalta</title>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script type="text/javascript">
+    import Typewriter from 'typewriter-effect/dist/core';
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="Making sense of the CCnsumer Price index and the Gini index in the context of PH Spotify charts from 2017-2022">
+  <meta name="keywords" content="spotify , music , philippines , economicx , data viz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight+50 + 'px';
+    }
+  </script>
+
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/post.min.62e31da07abb7eb04ebf3b56c1a169d53e8b3b5742c978b13690dc70bd042a3f.css" integrity="sha256-YuMdoHq7frBOvztWwaFp1T6LO1dCyXixNpDccL0EKj8="/>
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jcacperalta.github.io"
+      },
+      "articleSection" : "blog",
+      "name" : "Inflation and inequality in the music streaming market",
+      "headline" : "Inflation and inequality in the music streaming market",
+      "description" : "Making sense of the CCnsumer Price index and the Gini index in the context of PH Spotify charts from 2017-2022",
+      "inLanguage" : "en-US",
+      "author" : "jcperalta",
+      "creator" : "jcperalta",
+      "publisher": "jcperalta",
+      "accountablePerson" : "jcperalta",
+      "copyrightHolder" : "jcperalta",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-06-24 00:00:00 \x2b0800 PST",
+      "dateModified" : "2022-06-24 00:00:00 \x2b0800 PST",
+      "url" : "https:\/\/jcacperalta.github.io\/blog\/spotify-streams-part2\/",
+      "wordCount" : "3219",
+      "keywords" : ["spotify", "music", "philippines", "economicx", "data viz", "Blog"]
+    }
+  
+  </script>
+<meta property="og:title" content="Inflation and inequality in the music streaming market" />
+<meta property="og:description" content="Making sense of the CCnsumer Price index and the Gini index in the context of PH Spotify charts from 2017-2022" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jcacperalta.github.io/blog/spotify-streams-part2/" />
+<meta property="og:image" content="https://jcacperalta.github.io/images/blog/spotify-streams-part2/spotify_streams_part2_preview.jpg" />
+<meta property="article:published_time" content="2022-06-24T00:00:00+08:00" />
+<meta property="article:modified_time" content="2022-06-24T00:00:00+08:00" /><meta property="og:site_name" content="jcperalta" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jcacperalta.github.io/images/blog/spotify-streams-part2/spotify_streams_part2_preview.jpg"/>
+
+<meta name="twitter:title" content="Inflation and inequality in the music streaming market"/>
+<meta name="twitter:description" content="Making sense of the CCnsumer Price index and the Gini index in the context of PH Spotify charts from 2017-2022"/>
+
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/works">works</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Inflation and inequality in the music streaming market<span class="fancy">.</span></h1>
+            
+            <time datetime="2022-06-24 00:00:00 &#43;0800 PST" class="post__date"
+            >Jun 24 2022</time>
+            
+          </header>
+          <article class="post__content">
+              
+<p><code>Fork this project in Github </code><a href="https://github.com/user/jcacperalta/spotify_streams_analysis">here</a>
+<br>
+<code>Get the data in Kaggle </code><a href="https://www.kaggle.com/jcacperalta/spotify-daily-top-200-ph">here</a>
+<br>
+<code>This is Part 2 of a 2-part data analysis post about the PH music streaming market. You may check out Part 1 </code><a href="https://jcacperalta.github.io/blog/spotify-streams-part1/">here</a>
+<br>
+<br></p>
+<hr>
+<p>In the <a href="https://jcacperalta.github.io/blog/spotify-streams-part1/">first part of this analysis</a>, I floated the idea of the number of streams as a <em>currency</em> that can purchase a position in the music streaming market charts. Like a real currency, the ability of a stream to take a track to a position also changes with time&ndash;the market experiences inflation. Compared to previous years, you will need more streams to make it in the charts now, more so to land the coveted Top 10 positions.</p>
+<p>And its not only the streams per se&ndash;the current artists in the charts will also determine the likelihood of reaching a target position. A Top 1 position achieved during days when very famous artists are competing is a much harder feat to achieve.</p>
+<p>For this post, I wanted to quantitatively describe how these 2 factors - inflation and inequality - track the development of our local music streaming market. I used 2 economic concepts to quantify these- the <strong>Consumer Price Index (CPI) for inflation</strong> and the <strong>Gini index for inequality</strong>.</p>
+<p>Below are two interactive line charts that show how the CPI and Gini Index based on the streams of the Daily Top 200 charts evolved during the past 5 years. I invite you to hover on the lines to view the calculated value of these indices for a particular quarter.
+<br>
+<br></p>
+<p><a name="fig1"></a></p>
+<div class='tableauPlaceholder' id='viz1656941478610' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sp&#47;SpotifyInflationandInequality&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SpotifyInflationandInequality&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sp&#47;SpotifyInflationandInequality&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1656941478610');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height='527px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height='527px';} else { vizElement.style.width='80%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p>The trend could be seen at first glance:</p>
+<ul>
+<li>
+<p>Over the past 5 years, the music charts CPI has <em>increased</em> and now indicates that tracks need to be streamed about ~50% more to achieve the same position they had back in 2017.</p>
+</li>
+<li>
+<p>The Gini index, however, is <em>decreasing</em>, hinting that the lower chart positions have been more competitive and catching up to the performance of those in the higher chart positions.</p>
+</li>
+</ul>
+<br>
+How then does these two seemingly contrasting results affect an aspiring artist chances of success in the market? I'll be discussing these two quantities in more detail in the sections below.
+<h2 id="an-exclusive-market--spotify-ph-daily-top-200-charts">An exclusive market- Spotify PH Daily Top 200 charts<a class="anchor" href="#an-exclusive-market--spotify-ph-daily-top-200-charts">#</a></h2>
+<p>Doing a quick unique elements check on the available <a href="https://www.kaggle.com/jcacperalta/spotify-daily-top-200-ph">PH Spotify daily Top 200 chart data</a>, we can say that it is a very exclusive market in which only very few players participate.</p>
+<p>Out of <strong>200 positions x 1916 days = 383,200 daily available positions</strong> over 2017 Q1-2022 Q1, only <strong>4195 unique songs</strong> from <strong>909 unique artists</strong> made it in the charts. The consumers listen to a very small and quite successful sample out of the million songs available in the platform.</p>
+<p>We can look at the historical streams for a select range of milestone chart positions in the interactive plot below (feel free to hover over the lines to view the exact quantities!)</p>
+<br>
+<br>
+<a name="fig2"></a>
+<iframe title="Quarterly total streams for select Spotify chart positions" aria-label="Interactive line chart" id="datawrapper-chart-3RHHT" src="https://datawrapper.dwcdn.net/3RHHT/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 80% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<p>From the chart, we can see that the Top 1 position has</p>
+<ul>
+<li>60% more streams than that of Top 10</li>
+<li>4-5x streams than that of Top 50</li>
+<li>6-7x streams than that of Top 100 and</li>
+<li>8-10x streams than that of Top 200</li>
+</ul>
+<p>The streams needed to jump to the next position milestone seems to be double that of the the previous milestone. However, we note that the chart shows only 5/200 positions, and the streams required to reach each of these positions grow at a diferrent rate.</p>
+<p>We investigate this difference of growth rates and use the CPI to synthesize all of them to describe how quickly the whole streaming market grows.</p>
+<h2 id="measuring-inflation-in-the-music-streaming-market">Measuring inflation in the music streaming market<a class="anchor" href="#measuring-inflation-in-the-music-streaming-market">#</a></h2>
+<h3 id="what-is-the-consumer-price-index-cpi">What is the Consumer Price Index (CPI)?<a class="anchor" href="#what-is-the-consumer-price-index-cpi">#</a></h3>
+<p>In economics, the <em>Consumer Price Index (CPI)</em> is an indicator of the change in the average retail prices of a sampling of common goods and services commonly purchased by households (the <em>market basket</em>) relative to a base year. The CPI is most widely used in the calculation of the inflation rate and purchasing power of the peso, and as a monitoring indicator of government economic policy.<a href="#ref1">[1]</a>.</p>
+<p>How do you compute for the CPI? Say you have the following items as the market basket with the corresponding prices for the year 2019 and 2022.</p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>2019 prices</th>
+<th>2022 prices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noodles</td>
+<td>7.20</td>
+<td>7.50</td>
+</tr>
+<tr>
+<td>Sardines</td>
+<td>15.50</td>
+<td>17.00</td>
+</tr>
+<tr>
+<td>Rice</td>
+<td>49.25</td>
+<td>52.00</td>
+</tr>
+<tr>
+<td><b>TOTAL</b></td>
+<td><b>71.95 </b></td>
+<td><b>76.50 </b></td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>After adding the prices for both years, we get 71.95 PHP and 76.50 PHP for the years 2019 and 2022, respectively. To get the CPI with respect to base year 2019, we divide the most recent price to the past price, we get 76.50/71.95 = 1.063 = 106.3%. This means that there is a 6.3% increase in product prices in the market basket from 2019 to 2020<a href="#ref2">[2]</a>.</p>
+<p>How then do we calculate CPI in the context of the music streaming market? In our case, the market basket is the set of 200 positions from the Daily Top 200 charts. This sample is biased towards the best performing tracks among the millions of other tracks in the platform, but I think this best represents the market because a large chunk of all platform streams are generated by this subset. The &ldquo;price&rdquo; analog then would be the number of streams that each position garnered for the time period. This is what we used to calculate the quarterly CPI values plotted in <a href="#fig1">this chart</a>.</p>
+<h3 id="streams-needed-for-lower-positions-grow-faster-than-higher-ones">Streams needed for lower positions grow faster than higher ones<a class="anchor" href="#streams-needed-for-lower-positions-grow-faster-than-higher-ones">#</a></h3>
+<p>We already know from the <a href="#fig1">first chart</a> that  based on the 2022 CPI value, tracks need to be streamed about ~50% more to achieve the same position they had back in 2017. However, the streams needed to reach a particular position grows at a different rate from another position. But instead of showing only select positions like the <a href="#fig2">previous chart</a>, we now plot the growth of streams across all the positions for two whole years, 2018 and 2022.</p>
+<p><a name="fig3"></a>
+<img class="special-img-class" src="/images/blog/spotify-streams-part2/streams_per_position_2018_2021_annot.png" /></p>
+<figcaption><p>Distribution of 2018 (gray) and 2021 (green) monthly streams relative to 2017Q1 across all chart positions. The solid line indicates the median, and the shading the range of values for the year.</p>
+</figcaption>
+<p>Looking at the chart above:</p>
+<ul>
+<li>
+<p>2018&rsquo;s Top 50 positions needed about 5-25% <em>less</em> streams than 2017s compared to 2021 when about 10-25% <em>more</em> streams needed to retain the same 2017 positions.</p>
+</li>
+<li>
+<p>Despite the difference in median values, there seems to be a consistent +30% jump in the relative streams for both years starting at Top 50 until around Top 55. This is quite peculiar and might have to do with some internal market rule when tracks reach Top 50.</p>
+</li>
+<li>
+<p>After this Top 50 jump, the relative streams for both years increases slighlty until around Top 90-100 and then plateaus to a fairly constant rate towards lower positions: +30% to +40% for 2018 and +60% to +80% for 2022</p>
+</li>
+</ul>
+<h3 id="present-adjusted-positions">Present adjusted positions<a class="anchor" href="#present-adjusted-positions">#</a></h3>
+<p>We can explain how inflation in the music streaming market works in a different way. Instead of finding the percentage of streams relative to base year, we can use the base year value and see what place it could afford in the present year&rsquo;s charts&ndash; this is what I call the <em>present adjusted position</em> and is analogous to the CPI adjusted price.</p>
+<p>For example, here is a table containing the annual median streams per position for 2017 and 2022. The rightmost column contains the position 2017 streams will achieve at present.</p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Chart Position</th>
+<th>2017 median streams</th>
+<th>2022 median streams</th>
+<th>2017 Present Adjusted Positions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>245,738</td>
+<td>293,891</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>204,488</td>
+<td>270,587</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>189,154</td>
+<td>265,914</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>165,006</td>
+<td>255,902</td>
+<td>12</td>
+</tr>
+<tr>
+<td>5</td>
+<td>156,028</td>
+<td>235,180</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>Using the table above, a chart topper in 2017 will only get to the 5th spot, since its 245,738 views will not be able to beat 2022&rsquo;s 4th spot at 255,902 streams. Likewise, a typical 2017 Top 2 track will only reach 2022&rsquo;s Top 8 spot, 2017 Top 3 is a 2022 Top 10, etc.</p>
+<p>To better observe the trend across all 200 positions, I have plotted the 2017 base year and the 2022 present adjusted positions in the chart below.</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part2/cpi_adjusted_annotated.png" /></p>
+<figcaption><p>Base year positions vs. present adjusted positions</p>
+</figcaption>
+<p>The data x-axis values here stops at Top 85 because the 2017 streams for this position is only enough to land to the last position in the charts.</p>
+<p>You may observe that the adjusted positions does not necessarily increase in one constant linear rate, which is consistent with the different stream growth rates we observed in the <a href="#fig3">previous chart</a>. However, if we only look at certain position ranges, there seems to be strong linearity especially on the Top 1-20 and above Top 40 positions, where the adjusted positions are 2-3x that of the base year values.</p>
+<p>Overall, the charts tell us that it would be a lot harder now to get the same positions in the past due to inflation. Furthermore, it is harder now to even enter the chart because the streams required for lower positions grow faster than the higher ones.</p>
+<p>One more factor will add to the current challenges in the market&ndash;inequality.</p>
+<h2 id="measuring-inequality-in-the-music-streaming-market">Measuring inequality in the music streaming market<a class="anchor" href="#measuring-inequality-in-the-music-streaming-market">#</a></h2>
+<h3 id="what-is-the-gini-index">What is the Gini index?<a class="anchor" href="#what-is-the-gini-index">#</a></h3>
+<p>The <em>Gini index</em> or Gini coefficient is a measure of income distribution among a population and an indicator of overall economic inequality. It was developed by the Italian statistician Corrado Gini in 1912 <a href="#ref3">[3]</a>.</p>
+<p>A Gini index value of 0 represents perfect equality and 1 representing perfect inequality. To illustrate this, a country in which every citizen has the same income would have an income Gini index of 0. On the other hand, a country in which one citizen earned all the income, while everyone else earned nothing, would have an income Gini index of 1 <a href="#ref3">[3]</a>.</p>
+<p>However, Gini index should not be mistaken for an absolute measurement of wealth. A high-income country and a low-income one can have the same Gini index, as long as incomes are distributed similarly. For example,Turkey and USA both had income Gini indices of around 0.39–0.40 in 2016., but Turkey’s per capita GDP was less than half of the USA <a href="#ref3">[3]</a>.</p>
+<p>The Gini index has also been applied to non-economics use cases. The concept is the same&ndash;the higher the value of an index, more dispersed is the data.</p>
+<p>Alternatively, the Gini index can also be calculated as the half of the relative mean absolute difference. How then do we calculate the Gini index for the general use case? There are many ways to obtain it, but the simple implementation of it uses the fact that the Gini index is half the relative mean absolute difference of 2 sets of variables. I used the function below that I obtained from this source <a href="#ref4">[4]</a>.</p>
+<pre><code class="language-python">def gini(x):
+
+    # Mean absolute difference
+    mad = np.abs(np.subtract.outer(x, x)).mean()
+    # Relative mean absolute difference 
+    rmad = mad/np.mean(x)
+    # Gini index is half of Relative mean absolute difference
+    g = 0.5 * rmad
+    return g
+</code></pre>
+<h3 id="more-equally-distributed-streams-from-2017-to-2022">More equally-distributed streams from 2017 to 2022<a class="anchor" href="#more-equally-distributed-streams-from-2017-to-2022">#</a></h3>
+<p>We have shown in the <a href="#fig1">first chart</a> that the Gini index has been decreasing. We can look at this in more detail by examining the distribution of the Gini index values per year.</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part2/gini_dist_per_year.png" /></p>
+<figcaption><p>Yearly Gini index distributions for the PH Spotify Daily Top 200 charts. The white square indicates the median of the distribution. </p>
+</figcaption>
+<ul>
+<li>
+<p>The distributions for the first 3 years 2017-2019 are noticeably <em>bimodal</em>. The second peak during 2017-2018 is skewed much further to the right, corresponding to dates when the more famous artists dominate the chart with much fewer competition than present. The higher peak stayed at around Gini index = 35, except during 2018 when there was a 3 point drop in the median (I have yet to take a look at this closely) and increased again come 2019.</p>
+</li>
+<li>
+<p>For 2020-2021, the Gini distribution median decreased from 2019 value to around 34, with the shape roughly similar to each other.</p>
+</li>
+<li>
+<p>At present, the Gini distribution median is at 32, and shifted towards lower values compared to the rest of the years. However, we could expect this to rise when the artists who dominate the charts release their new songs in the coming months.</p>
+</li>
+</ul>
+<h3 id="what-does-a-highlow-gini-day-look-like-in-the-streaming-market">What does a high/low Gini day look like in the streaming market?<a class="anchor" href="#what-does-a-highlow-gini-day-look-like-in-the-streaming-market">#</a></h3>
+<p>Lets compute the Gini values for certain days and show how they look like.</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part2/gini_per_day_sample.png" /></p>
+<figcaption><p>Yearly Gini</p>
+</figcaption>
+<p>Above is a streams vs position plot of a high Gini index (=46.45) day on January 28, 2017 and a low Gini index (=28.28) day on December 16, 2020. We compare this to all days when the Gini index value is at 34-35, the mean Gini value for the entire data.</p>
+<ul>
+<li>
+<p>Top 5 of high Gini day has 50000-80000 more streams compared to average, while Top 5-20 of low Gini days have 20000-30000 less streams.</p>
+</li>
+<li>
+<p>Top 25-50 of high, low, and average Gini days seem to have almost identical streams.</p>
+</li>
+<li>
+<p>Top 50-200 high Gini day has 15k less streams, while 10k more streams than average.</p>
+</li>
+</ul>
+<h3 id="how-do-popular-artists-affect-the-streams-distribution">How do popular artists affect the streams distribution?<a class="anchor" href="#how-do-popular-artists-affect-the-streams-distribution">#</a></h3>
+<p>Certain artists, when they appear in the charts, reach the Top 1 position with very high streams and thus lead to high Gini market conditions. To be specific, these artists land on the Top 1 position with a day Gini index value greater than 40 (around 90th percentile of values from 2017-2022).</p>
+<p>The table below lists these artists, and their mean Gini index values for all the days that they have placed at least Top 3 in the charts.</p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Top 1 Artist</th>
+<th>Average Gini index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>juan karlos</td>
+<td>39.5</td>
+</tr>
+<tr>
+<td>This Band</td>
+<td>38.9</td>
+</tr>
+<tr>
+<td>Bruno Mars</td>
+<td>38.2</td>
+</tr>
+<tr>
+<td>Matthaios</td>
+<td>38.0</td>
+</tr>
+<tr>
+<td>Ed Sheeran</td>
+<td>37.4</td>
+</tr>
+<tr>
+<td>December Avenue</td>
+<td>37.1</td>
+</tr>
+<tr>
+<td>Sam Smith</td>
+<td>36.7</td>
+</tr>
+<tr>
+<td>Taylor Swift</td>
+<td>35.6</td>
+</tr>
+<tr>
+<td>Ariana Grande</td>
+<td>35.1</td>
+</tr>
+<tr>
+<td>BLACKPINK</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>BTS</td>
+<td>34.9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-effect-of-gini-conditions-on-adjusted-positions">The effect of Gini conditions on adjusted positions<a class="anchor" href="#the-effect-of-gini-conditions-on-adjusted-positions">#</a></h3>
+<p>Lastly, I wanted to know how the Gini conditions translate to increase/decrease of positions when I convert the 2017 streams to its 2022 equivalent. Lets see what will happen if we segregate the high Gini index from the low Gini index days.</p>
+<br>
+<table>
+<thead>
+<tr>
+<th>Chart Position</th>
+<th>2017 average streams</th>
+<th>2022 Low Gini average streams</th>
+<th>Low Gini adjusted position</th>
+<th>2022 High Gini average streams</th>
+<th>High Gini adjusted position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>245,738</td>
+<td>242,483</td>
+<td>1</td>
+<td>307,076</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>204,488</td>
+<td>227,155</td>
+<td>6</td>
+<td>280,956</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>189,154</td>
+<td>224,258</td>
+<td>8</td>
+<td>273,869</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>165,006</td>
+<td>218,265</td>
+<td>11</td>
+<td>260,930</td>
+<td>13</td>
+</tr>
+<tr>
+<td>5</td>
+<td>156,028</td>
+<td>208,496</td>
+<td>12</td>
+<td>243,699</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>From the table above, we see that the 2022 adjusted position kept the 2017 streams at Top 1 for low Gini index days compared to high Gini days when it dropped to Top 5. This is consistent for the first 5 positions.</p>
+<p>The plot below shows the difference in present adjusted positions of low Gini index days to high Gini index days for all the Top 200 positions.</p>
+<p><img class="special-img-class" src="/images/blog/spotify-streams-part2/gini_effect_annotated.png" /></p>
+<figcaption><p>Difference of present adjusted positions achieved by 2017 streams for a high Gini index (<30) vs low Gini index days(>30) on 2022 Q1. Signs indicate the natural direction of ascent/descent in the charts, i.e. a y=-4 when x=1 shows that the Top 1 Position has dropped to the Top 5 position, etc.</p>
+</figcaption>
+<br> 
+<p>What does this plot say?</p>
+<ul>
+<li>
+<p>For a high Gini index day, it would be much harder to achieve the top chart positions (up to Top 23), where 2017 positions translate to 5 positions <em>lower</em> than you may achieve for low Gini index days.</p>
+</li>
+<li>
+<p>For the rest of the positions, you may expect to gain <em>higher</em> adjusted values because of the lower streams required for high Gini index days. This ease of getting lower positions, especially for Top 50 and lower, may even lead to up to 22 positions higher than a low Gini index day.</p>
+</li>
+</ul>
+<p>Flip the chart on the x-axis and it will show you the effect for low Gini index day&ndash; higher positions are easier to achieve with just 2017 level streams, but it would be much harder to enter the charts since they would now require more streams than a high Gini day.</p>
+<h3 id="in-summary">In summary<a class="anchor" href="#in-summary">#</a></h3>
+<p>If I were a music producer/artist, how can I use this analysis to improve my performance in the charts? I can synthesize my results to these few key points:</p>
+<ul>
+<li>
+<p>Over the past 5 years, the music charts CPI has increased and now indicates that <em>tracks need to be streamed about ~50% more</em> to achieve the same position they had back in 2017.</p>
+</li>
+<li>
+<p>It is now harder to get in the Top 200 charts because the <em>Top 100-200 positions now require 60-80% more streams</em> than they used to have back in 2017. If a track will use 2017 as their benchmark performance, they would only get a position 2-3x lower than they previously achieved.</p>
+</li>
+<li>
+<p>Using the Gini index, we notice that streams are now relatively <em>more equitably distributed</em> across the chart positions in 2022 than 2017. However, the market more often than not shifts to less equitable conditions when certain artists rank at the top of the charts.</p>
+</li>
+<li>
+<p>A new track that is just starting to gain popularity can take advantage of a high Gini day to make it to the charts because of lower-than-usual needed streams for lower positions.</p>
+</li>
+<li>
+<p>On the other hand, because the top spots have lower-than-usual needed streams during low Gini index days, it makes it easier for tracks already in the charts to push and aim for higher chart positions.</p>
+</li>
+</ul>
+<h3 id="where-can-we-take-this-further">Where can we take this further?<a class="anchor" href="#where-can-we-take-this-further">#</a></h3>
+<p>• <u>Weighting per chart position</u></p>
+<p>We can adjust the weights in computing the CPI in such a way that specific position milestones like Top 10, Top 50, and Top 100 may be given more importance. This requires some more investigation and may require input from domain experts.</p>
+<p>• <u>CPI per genre</u></p>
+<p>We may group the tracks according to <em>genre</em> to see which kind of music grows faster and could make the market less competitive. Pop songs are a candidate to this, by virtue of them being pop songs.</p>
+<p>However, Spotify does not provide a genre per track, but instead computes certain metrics related to a music concept, like loudness, danceability, energy etc. These are what they call <em>audio features</em> and you may check them out in their <a href="https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features">API documentation</a>.</p>
+<p>• <u>Any use case with a competitive market and regularly updating data</u></p>
+<p>The same analysis method can be used to assess the inflation and inequality of markets that have reffularly updating data. For example, we may apply the methods above to assess the increasing rates and competitiveness of airline ticketing sites, as well as rental prices for hotels and other properties. One may even conduct sub-daily computations of CPI and Gini idnex on them provided the data also updates subdaily on your end.</p>
+<h3 id="where-did-the-data-come-from">Where did the data come from?<a class="anchor" href="#where-did-the-data-come-from">#</a></h3>
+<p>For this analysis, I used the <a href="https://www.kaggle.com/jcacperalta/spotify-daily-top-200-ph">data I collected</a> from <a href="https://spotifycharts.com/regional">Spotify charts</a>.</p>
+<h3 id="what-are-the-tools-i-used">What are the tools I used?<a class="anchor" href="#what-are-the-tools-i-used">#</a></h3>
+<p>I used <code>pandas</code> to read and analyze the dataset, <code>matplotlib</code> and <code>seaborn</code> to make some basic plots. This time, I have also used popular online data visualization tools <a href="datawrapper.com">datawrapper</a> and <a href="public.tableau.com">Tableau</a> to make the final interactive charts.</p>
+<br>
+Thanks for reading this and see you in the next blog!
+<br>
+<br>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<p>[1] <a name="ref1"></a>Philippine Statistics Authority. CONSUMER PRICE INDEX (CPI) <a href="https://psa.gov.ph/sites/default/files/Primer%20on%20Consumer%20Price%20Index2_1_0.pdf">https://psa.gov.ph/sites/default/files/Primer%20on%20Consumer%20Price%20Index2_1_0.pdf</a></p>
+<p>[2] <a name="ref2"></a>Indeed Editorial Team (2022). How To Calculate CPI (Consumer Price Index) <a href="https://www.indeed.com/career-advice/career-development/how-to-calculate-cpi">https://www.indeed.com/career-advice/career-development/how-to-calculate-cpi</a></p>
+<p>[3] <a name="ref3"></a>Juhi Ramzai (2020). Clearly Explained: Gini coefficient and Lorenz curve  <a href="https://towardsdatascience.com/clearly-explained-gini-coefficient-and-lorenz-curve-fe6f5dcdc07">https://towardsdatascience.com/clearly-explained-gini-coefficient-and-lorenz-curve-fe6f5dcdc07</a></p>
+<p>[4] <a name="ref4"></a>Calculating Gini coefficient in Python/numpy <a href="https://stackoverflow.com/questions/39512260/calculating-gini-coefficient-in-python-numpy">https://stackoverflow.com/questions/39512260/calculating-gini-coefficient-in-python-numpy</a></p>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+ 
+          
+            <div class="pagination">
+  
+    <a class="pagination__item" href="https://jcacperalta.github.io/blog/fb-livestream-tracker/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Measuring digital campaign rally participation: how to track livestream views using python</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="GitHub"
+         style="background-image: url(/images/social/github.svg)" 
+         href="https://github.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Email"
+         style="background-image: url(/images/social/email.svg)" 
+         href="mailto:jcacperalta@gmail.com"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="LinkedIn"
+         style="background-image: url(/images/social/linkedin.svg)" 
+         href="https://linkedin.com/in/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Scholar"
+         style="background-image: url(/images/social/scholar.svg)" 
+         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2020</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

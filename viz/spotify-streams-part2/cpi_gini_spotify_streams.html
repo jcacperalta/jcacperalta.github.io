@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.3.min.js" integrity="sha384-T2yuo9Oe71Cz/I4X9Ac5+gpEa5a8PpJCDlqKYO0CfAuEszu1JrXLl8YugMqYe3sM" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="657de144-bdf1-42ed-8406-14b466c2bf74" data-root-id="6528"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="6860">
+          {"fcf03edc-323c-4ee4-aa50-d3b1ed0dca11":{"roots":{"references":[{"attributes":{"days":[1,15]},"id":"6581","type":"DaysTicker"},{"attributes":{"months":[0,6]},"id":"6585","type":"MonthsTicker"},{"attributes":{"days":[1,4,7,10,13,16,19,22,25,28]},"id":"6579","type":"DaysTicker"},{"attributes":{"days":[1,8,15,22]},"id":"6580","type":"DaysTicker"},{"attributes":{},"id":"6586","type":"YearsTicker"},{"attributes":{},"id":"6529","type":"DataRange1d"},{"attributes":{"months":[0,4,8]},"id":"6584","type":"MonthsTicker"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","top_units":"screen"},"id":"6551","type":"BoxAnnotation"},{"attributes":{"use_scientific":false},"id":"6570","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"6561"},"glyph":{"id":"6563"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"6564"},"selection_glyph":null,"view":{"id":"6566"}},"id":"6565","type":"GlyphRenderer"},{"attributes":{"source":{"id":"6561"}},"id":"6566","type":"CDSView"},{"attributes":{},"id":"6572","type":"DatetimeTickFormatter"},{"attributes":{},"id":"6573","type":"BasicTicker"},{"attributes":{"data_source":{"id":"6561"},"glyph":{"id":"6593"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"6594"},"selection_glyph":null,"view":{"id":"6596"},"y_range_name":"Gini Index"},"id":"6595","type":"GlyphRenderer"},{"attributes":{"callback":null,"formatters":{"@date":"datetime"},"tooltips":[["Date","@date_str"],["CPI","@cpi{0.0}"],["Gini index","@gini_idx{0.0}"]]},"id":"6621","type":"HoverTool"},{"attributes":{},"id":"6587","type":"Selection"},{"attributes":{},"id":"6588","type":"UnionRenderers"},{"attributes":{},"id":"6535","type":"LinearScale"},{"attributes":{"use_scientific":false},"id":"6574","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"6541"},"dimension":1,"grid_line_alpha":0.5,"grid_line_dash":[2,4],"ticker":null},"id":"6544","type":"Grid"},{"attributes":{"line_alpha":0.1,"line_color":"#1db954","line_width":2,"x":{"field":"date"},"y":{"field":"gini_idx"}},"id":"6594","type":"Line"},{"attributes":{"line_color":"#1db954","line_width":2,"x":{"field":"date"},"y":{"field":"gini_idx"}},"id":"6593","type":"Line"},{"attributes":{"axis":{"id":"6537"},"grid_line_color":null,"ticker":null},"id":"6540","type":"Grid"},{"attributes":{},"id":"6546","type":"WheelZoomTool"},{"attributes":{"data":{"cpi":{"__ndarray__":"AAAAAAAAWUAzMzMzM5NWQJqZmZmZmVhAzczMzMwsWUAzMzMzMzNZQM3MzMzMLFlAZmZmZmZGWUCamZmZmXlcQJqZmZmZeV5AAAAAAABAXEAzMzMzM/NeQAAAAAAAcGBAMzMzMzOTYEDNzMzMzKxZQJqZmZmZ2VxAmpmZmZk5YEBmZmZmZuZcQM3MzMzMbF5AZmZmZmbGYEAzMzMzM9NjQGZmZmZmxmJA","dtype":"float64","order":"little","shape":[21]},"date":{"__ndarray__":"AABANnWVdUIAAMD7bLJ1QgAAACe3z3VCAAAAuFPtdUIAAABJ8Ap2QgAAgA7oJ3ZCAADAOTJFdkIAAMDKzmJ2QgAAwFtrgHZCAABAIWOddkIAAIBMrbp2QgAAgN1J2HZCAACAbub1dkIAAMCZMBN3QgAAAMV6MHdCAAAAVhdOd0IAAADns2t3QgAAgKyriHdCAADA1/Wld0IAAMBoksN3QgAAwPku4XdC","dtype":"float64","order":"little","shape":[21]},"date_str":["2017-Q1","2017-Q2","2017-Q3","2017-Q4","2018-Q1","2018-Q2","2018-Q3","2018-Q4","2019-Q1","2019-Q2","2019-Q3","2019-Q4","2020-Q1","2020-Q2","2020-Q3","2020-Q4","2021-Q1","2021-Q2","2021-Q3","2021-Q4","2022-Q1"],"gini_idx":{"__ndarray__":"zczMzMyMRUDNzMzMzAxCQGZmZmZmJkJAMzMzMzNzQkAzMzMzM/NAQAAAAAAAAEFAAAAAAABAQECamZmZmZlDQM3MzMzMjENAZmZmZmbmQUAzMzMzM7NBQDMzMzMzM0JAAAAAAACAQkAAAAAAAEBBQM3MzMzMjEBAmpmZmZnZQEDNzMzMzMw/QDMzMzMzM0FAZmZmZmZmQkDNzMzMzExBQDMzMzMzM0BA","dtype":"float64","order":"little","shape":[21]}},"selected":{"id":"6587"},"selection_policy":{"id":"6588"}},"id":"6561","type":"ColumnDataSource"},{"attributes":{"text":"Inflation and Inequality in the PH Spotify Charts, 2017-2022","text_font_size":{"value":"20px"}},"id":"6567","type":"Title"},{"attributes":{"label":{"value":"Gini Index"},"renderers":[{"id":"6595"}]},"id":"6620","type":"LegendItem"},{"attributes":{"source":{"id":"6561"}},"id":"6596","type":"CDSView"},{"attributes":{"line_color":"#A8D22E","line_width":2,"x":{"field":"date"},"y":{"field":"cpi"}},"id":"6563","type":"Line"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","autohide":true,"tools":[{"id":"6545"},{"id":"6546"},{"id":"6547"},{"id":"6548"},{"id":"6549"},{"id":"6550"},{"id":"6621"}]},"id":"6552","type":"Toolbar"},{"attributes":{"above":[{"id":"6623"}],"below":[{"id":"6537"}],"center":[{"id":"6540"},{"id":"6544"},{"id":"6590"}],"extra_y_ranges":{"Gini Index":{"id":"6559"}},"left":[{"id":"6541"}],"outline_line_width":0,"plot_height":350,"plot_width":800,"renderers":[{"id":"6565"},{"id":"6595"}],"right":[{"id":"6560"}],"title":{"id":"6567"},"toolbar":{"id":"6552"},"x_range":{"id":"6529"},"x_scale":{"id":"6533"},"y_range":{"id":"6531"},"y_scale":{"id":"6535"}},"id":"6528","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"6533","type":"LinearScale"},{"attributes":{"click_policy":"hide","items":[{"id":"6591"},{"id":"6620"}],"location":"top_left"},"id":"6590","type":"Legend"},{"attributes":{},"id":"6542","type":"BasicTicker"},{"attributes":{"label":{"value":"CPI"},"renderers":[{"id":"6565"}]},"id":"6591","type":"LegendItem"},{"attributes":{"formatter":{"id":"6572"},"ticker":{"id":"6538"}},"id":"6537","type":"DatetimeAxis"},{"attributes":{"overlay":{"id":"6551"}},"id":"6547","type":"BoxZoomTool"},{"attributes":{"line_alpha":0.1,"line_color":"#A8D22E","line_width":2,"x":{"field":"date"},"y":{"field":"cpi"}},"id":"6564","type":"Line"},{"attributes":{},"id":"6550","type":"HelpTool"},{"attributes":{"axis_label":"CPI(%)","formatter":{"id":"6570"},"ticker":{"id":"6542"}},"id":"6541","type":"LinearAxis"},{"attributes":{},"id":"6549","type":"ResetTool"},{"attributes":{},"id":"6531","type":"DataRange1d"},{"attributes":{"months":[0,1,2,3,4,5,6,7,8,9,10,11]},"id":"6582","type":"MonthsTicker"},{"attributes":{"mantissas":[1,2,5],"max_interval":500.0,"num_minor_ticks":0},"id":"6575","type":"AdaptiveTicker"},{"attributes":{"base":60,"mantissas":[1,2,5,10,15,20,30],"max_interval":1800000.0,"min_interval":1000.0,"num_minor_ticks":0},"id":"6576","type":"AdaptiveTicker"},{"attributes":{"end":50,"start":30},"id":"6559","type":"Range1d"},{"attributes":{"days":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},"id":"6578","type":"DaysTicker"},{"attributes":{},"id":"6545","type":"PanTool"},{"attributes":{"base":24,"mantissas":[1,2,4,6,8,12],"max_interval":43200000.0,"min_interval":3600000.0,"num_minor_ticks":0},"id":"6577","type":"AdaptiveTicker"},{"attributes":{"text":"Quarterly CPI and Gini Index values of the streams of the Daily Top 200 songs","text_font_size":{"value":"10px"},"text_font_style":"italic"},"id":"6623","type":"Title"},{"attributes":{"num_minor_ticks":5,"tickers":[{"id":"6575"},{"id":"6576"},{"id":"6577"},{"id":"6578"},{"id":"6579"},{"id":"6580"},{"id":"6581"},{"id":"6582"},{"id":"6583"},{"id":"6584"},{"id":"6585"},{"id":"6586"}]},"id":"6538","type":"DatetimeTicker"},{"attributes":{"months":[0,2,4,6,8,10]},"id":"6583","type":"MonthsTicker"},{"attributes":{"axis_label":"Gini Index","formatter":{"id":"6574"},"ticker":{"id":"6573"},"y_range_name":"Gini Index"},"id":"6560","type":"LinearAxis"},{"attributes":{},"id":"6548","type":"SaveTool"}],"root_ids":["6528"]},"title":"Bokeh Application","version":"2.2.3"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('6860').textContent;
+                  var render_items = [{"docid":"fcf03edc-323c-4ee4-aa50-d3b1ed0dca11","root_ids":["6528"],"roots":{"6528":"657de144-bdf1-42ed-8406-14b466c2bf74"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

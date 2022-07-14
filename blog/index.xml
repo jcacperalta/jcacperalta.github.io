@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jcacperalta.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inflation and inequality in the music streaming market</title>
+      <link>https://jcacperalta.github.io/blog/spotify-streams-part2/</link>
+      <pubDate>Fri, 24 Jun 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/spotify-streams-part2/</guid>
+      <description>Making sense of the consumer price index and the Gini index in the context of PH Spotify charts from 2017-2022</description>
+    </item>
     
     <item>
       <title>Measuring digital campaign rally participation: how to track livestream views using python</title>
