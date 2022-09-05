@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>TWICE Song Networks</title>
+  <meta name="description" content="TWICE Song Network">
+  <meta name="author" content="JC Peralta">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/headings.css">
+
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <header>
+      <div class = "title">TWICE Line Succession Networks</div>
+      <div class = "explanation texts">
+          <p style="margin-bottom: 1em;"> The visualization shows the network representing how each TWICE member succeeds another member in their Korean singles. <b> Thicker </b> arrows represent line succession member pairs that occur in the ALL SONGS network. 
+          </br>
+          </br>
+          Hover on a node to highlight a member's neighbors in the network. Click on a node to toggle the popup tooltip.
+          </p>
+      </div>
+    </header>
+
+   <div id="song_selection" class="control">
+        <div class = "selectorheading">Select song:</div>
+        <select id="song_select">
+          <option value="ALL_SONGS.csv">ALL SONGS (2015-2022)</option>
+          <option value="LikeOohAhh.csv">Like Ooh Ahh (2015)</option>
+          <option value="CheerUp.csv">Cheer Up (2016)</option>
+          <option value="TT.csv">TT (2016)</option>
+          <option value="HeartShaker.csv">Heart Shaker (2017)</option>
+          <option value="KnockKnock.csv">Knock Knock (2017)</option>
+          <option value="Likey.csv">Likey (2017)</option>
+          <option value="DanceTheNightAway.csv">Dance The Night Away (2018)</option>
+          <option value="WhatIsLove.csv">What Is Love (2018) </option>
+          <option value="YesOrYes.csv">Yes or Yes (2018)</option>
+          <option value="Fancy.csv">Fancy (2019) </option>
+          <option value="FeelSpecial.csv">Feel Special (2019)</option>
+          <option value="More&More.csv">More&More (2020) </option>
+          <option value="ICantStopMe.csv"> I Can't Stop Me (2020) </option>
+          <option value="CryForMe.csv">Cry For Me (2020) </option>
+          <option value="AlcoholFree.csv">Alcohol Free (2021) </option>
+          <option value="Scientist.csv">Scientist (2022) </option>
+          <option value="TalkThatTalk.csv">Talk That Talk (2022) </option>
+        </select>
+
+   </div>
+   <div id="main" role="main">
+   </div>
+   </br>
+   </br>
+   </br>
+      <div id="vis">
+      </div>
+    </div>
+  <div class="credit texts">Data and analysis by JC Peralta. d3 viz code modified from tutorials provided by d3noob <a href="https://bl.ocks.org/d3noob/5141278">here</a> and Flowing Data <a href="http://projects.flowingdata.com/tut/interactive_network_demo/">here</a> </div>
+
+
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="src/bootstrap.tooltip.js"></script>
+<script src="src/bootstrap.popover.js"></script>
+<script src="src/network.js"></script>
+
+
+</body>
+</html>

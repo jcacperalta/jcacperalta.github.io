@@ -1,0 +1,13 @@
+source,target,num_occurences,is_common,source_btwn_c,target_btwn_c,source_btwn_c_rank,target_btwn_c_rank,source_eigen_c,target_eigen_c,source_eigen_c_rank,target_eigen_c_rank,source_duration,target_duration,source_duration_rank,target_duration_rank
+Chaeyoung,Tzuyu,1,0,0.0,0.3393,9th,5th,0.0,0.3294,9th,5th,14.3,17.02,9th,4th
+Dahyun,Jihyo,1,1,0.1071,0.4821,7th,1st,0.175,0.3545,8th,3rd,14.82,28.92,5th,2nd
+Jeongyeon,Dahyun,1,0,0.125,0.1071,6th,7th,0.2491,0.175,7th,8th,17.5,14.82,3rd,5th
+Jihyo,Jeongyeon,1,1,0.4821,0.125,1st,6th,0.3545,0.2491,3rd,7th,28.92,17.5,2nd,3rd
+Jihyo,Nayeon,1,1,0.4821,0.375,1st,3rd,0.3545,0.4805,3rd,1st,28.92,35.08,2nd,1st
+Mina,Momo,1,1,0.3571,0.4107,4th,2nd,0.3377,0.4688,4th,2nd,14.78,14.82,7th,5th
+Momo,Sana,1,0,0.4107,0.0536,2nd,8th,0.4688,0.3294,2nd,6th,14.82,14.74,5th,8th
+Momo,Tzuyu,1,0,0.4107,0.3393,2nd,5th,0.4688,0.3294,2nd,5th,14.82,17.02,5th,4th
+Nayeon,Mina,1,1,0.375,0.3571,3rd,4th,0.4805,0.3377,1st,4th,35.08,14.78,1st,7th
+Sana,Nayeon,1,0,0.0536,0.375,8th,3rd,0.3294,0.4805,6th,1st,14.74,35.08,8th,1st
+Tzuyu,Jihyo,1,0,0.3393,0.4821,5th,1st,0.3294,0.3545,5th,3rd,17.02,28.92,4th,2nd
+Tzuyu,Momo,1,0,0.3393,0.4107,5th,2nd,0.3294,0.4688,5th,2nd,17.02,14.82,4th,5th

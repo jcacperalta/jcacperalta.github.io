@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Insights from TWICE&#39;s line succession networks: 2022 Update</title>
+      <link>https://jcacperalta.github.io/blog/twice-analysis-update-2022/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/twice-analysis-update-2022/</guid>
+      <description>How has TWICE&amp;rsquo;s line succession networks changed since our last analysis?</description>
+    </item>
     
     <item>
       <title>Inflation and inequality in the music streaming market</title>

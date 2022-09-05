@@ -75,7 +75,7 @@
       "datePublished": "2021-05-21 00:00:00 \x2b0800 PST",
       "dateModified" : "2021-05-21 00:00:00 \x2b0800 PST",
       "url" : "https:\/\/jcacperalta.github.io\/blog\/twice-analysis-part2\/",
-      "wordCount" : "2821",
+      "wordCount" : "2809",
       "keywords" : ["twice", "k-pop", "music", "data viz", "network", "Blog"]
     }
   
@@ -237,7 +237,7 @@ I call the network I have generated the <strong>line succession network</strong>
 </li>
 </ol>
 <p>I&rsquo;d like to point out that these groupings emerged in the network without either labelling the members with their positions nor tagging the lines to song parts. These line succession pairs just repeat so frequently in the dataset that these expected patterns were bound to appear.</p>
-<p>In fact, you may try to create a &ldquo;hypothetical&rdquo; TWICE song witht he ALL SONGS network by starting with one member node and tracing out a sequence of members by following the edges that connect them!</p>
+<p>In fact, you may try to create a &ldquo;hypothetical&rdquo; TWICE song with the ALL SONGS network by starting with one member node and tracing out a sequence of members by following the edges that connect them!</p>
 <p><strong>2. Line succession networks of each individual song</strong></p>
 <p>We can better appreciate the diversity of network structures when we look at each of their individual songs.</p>
 <br/>
@@ -364,21 +364,85 @@ the node functions as a go-between (thus the name) and could serve to connect an
 <h2 id="what-song-did-each-member-top-in-terms-of-centrality">What song did each member top in terms of centrality?<a class="anchor" href="#what-song-did-each-member-top-in-terms-of-centrality">#</a></h2>
 <p>We could also look at each member&rsquo;s best metrics and try to validate as a listener whether she did serve a relevant role in that particular song.</p>
 <br>
-<br>
 <p><em>TWICE member&rsquo;s top songs, according to their centrality measures</em>
-<br>
-<br>
-|Member   |eig_c (rank)        |Top Song        |btwn_c (rank)  |Top Song        |
-|&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|
-|Nayeon   | 0.563 (1st)  |What Is Love  |0.411 (3rd)         |Cheer Up    |
-|Jeongyeon|0.226 (1st)         |Yes Or Yes  | 0.410 (4th)  |Signal      |
-|Momo     |0.411 (2nd)         |Feel Special| 0.469 (2nd)  |Feel Special|
-|Sana     |0.232 (3rd)         |TT          | 0.445 (2nd)  |Fancy       |
-|Jihyo    |0.580 (1st)         |Like Ooh Ahh| 0.591 (1st)  |Like Ooh Ahh|
-|Mina     |0.509 (1st)         |Cheer Up    | 0.486 (1st)  |Yes Or Yes  |
-|Dahyun   |0.257 (2nd)         |Cry For Me  | 0.469 (2nd)  |TT          |
-|Chaeyoung|0.314 (2nd)         |Fancy       | 0.521 (1st)  |Fancy       |
-|Tzuyu    |0.339 (5th)         |Feel Special| 0.488 (1st)  |Heart Shaker|</p>
+<br> 
+<br></p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>eig_c (rank)</th>
+<th>Top Song</th>
+<th>btwn_c (rank)</th>
+<th>Top Song</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nayeon</td>
+<td>0.563 (1st)</td>
+<td>What Is Love</td>
+<td>0.411 (3rd)</td>
+<td>Cheer Up</td>
+</tr>
+<tr>
+<td>Jeongyeon</td>
+<td>0.226 (1st)</td>
+<td>Yes Or Yes</td>
+<td>0.410 (4th)</td>
+<td>Signal</td>
+</tr>
+<tr>
+<td>Momo</td>
+<td>0.411 (2nd)</td>
+<td>Feel Special</td>
+<td>0.469 (2nd)</td>
+<td>Feel Special</td>
+</tr>
+<tr>
+<td>Sana</td>
+<td>0.232 (3rd)</td>
+<td>TT</td>
+<td>0.445 (2nd)</td>
+<td>Fancy</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>0.580 (1st)</td>
+<td>Like Ooh Ahh</td>
+<td>0.591 (1st)</td>
+<td>Like Ooh Ahh</td>
+</tr>
+<tr>
+<td>Mina</td>
+<td>0.509 (1st)</td>
+<td>Cheer Up</td>
+<td>0.486 (1st)</td>
+<td>Yes Or Yes</td>
+</tr>
+<tr>
+<td>Dahyun</td>
+<td>0.257 (2nd)</td>
+<td>Cry For Me</td>
+<td>0.469 (2nd)</td>
+<td>TT</td>
+</tr>
+<tr>
+<td>Chaeyoung</td>
+<td>0.314 (2nd)</td>
+<td>Fancy</td>
+<td>0.521 (1st)</td>
+<td>Fancy</td>
+</tr>
+<tr>
+<td>Tzuyu</td>
+<td>0.339 (5th)</td>
+<td>Feel Special</td>
+<td>0.488 (1st)</td>
+<td>Heart Shaker</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>
 <p>Sometimes, it all boils down to the number (not duration!) of lines in the song. For instance, Chaeyoung&rsquo;s highest ranked song for both metrics is <em>Fancy</em> because she delivered the repeating iconic hook line &ldquo;Fancy, ooh!&rdquo; there. Meanwhile, Jihyo&rsquo;s highest rank song for both metrics is their debut single, <em>Like Ooh Ahh</em>, where she took the most lines. In a similar manner, Nayeon also had her most dominant role in <em>What is Love</em> and <em>Cheer Up</em>.</p>

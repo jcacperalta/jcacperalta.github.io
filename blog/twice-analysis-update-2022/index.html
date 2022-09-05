@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <title>Insights from TWICE&#39;s line succession networks: 2022 Update | jcperalta</title>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script type="text/javascript">
+    import Typewriter from 'typewriter-effect/dist/core';
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="How has TWICE&#39;s line succession networks changed since our last analysis?">
+  <meta name="keywords" content="twice , k-pop , music , data viz , network">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight+50 + 'px';
+    }
+  </script>
+
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/post.min.62e31da07abb7eb04ebf3b56c1a169d53e8b3b5742c978b13690dc70bd042a3f.css" integrity="sha256-YuMdoHq7frBOvztWwaFp1T6LO1dCyXixNpDccL0EKj8="/>
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jcacperalta.github.io"
+      },
+      "articleSection" : "blog",
+      "name" : "Insights from TWICE\x27s line succession networks: 2022 Update",
+      "headline" : "Insights from TWICE\x27s line succession networks: 2022 Update",
+      "description" : "How has TWICE\x27s line succession networks changed since our last analysis?",
+      "inLanguage" : "en-US",
+      "author" : "jcperalta",
+      "creator" : "jcperalta",
+      "publisher": "jcperalta",
+      "accountablePerson" : "jcperalta",
+      "copyrightHolder" : "jcperalta",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-09-02 00:00:00 \x2b0800 PST",
+      "dateModified" : "2022-09-02 00:00:00 \x2b0800 PST",
+      "url" : "https:\/\/jcacperalta.github.io\/blog\/twice-analysis-update-2022\/",
+      "wordCount" : "1645",
+      "keywords" : ["twice", "k-pop", "music", "data viz", "network", "Blog"]
+    }
+  
+  </script>
+<meta property="og:title" content="Insights from TWICE&#39;s line succession networks: 2022 Update" />
+<meta property="og:description" content="How has TWICE&#39;s line succession networks changed since our last analysis?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jcacperalta.github.io/blog/twice-analysis-update-2022/" />
+<meta property="og:image" content="https://jcacperalta.github.io/images/blog/twice-analysis-update-2022/twice_analysis_2022_preview.png" />
+<meta property="article:published_time" content="2022-09-02T00:00:00+08:00" />
+<meta property="article:modified_time" content="2022-09-02T00:00:00+08:00" /><meta property="og:site_name" content="jcperalta" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jcacperalta.github.io/images/blog/twice-analysis-update-2022/twice_analysis_2022_preview.png"/>
+
+<meta name="twitter:title" content="Insights from TWICE&#39;s line succession networks: 2022 Update"/>
+<meta name="twitter:description" content="How has TWICE&#39;s line succession networks changed since our last analysis?"/>
+
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/works">works</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Insights from TWICE&#39;s line succession networks: 2022 Update<span class="fancy">.</span></h1>
+            
+            <time datetime="2022-09-02 00:00:00 &#43;0800 PST" class="post__date"
+            >Sep 2 2022</time>
+            
+          </header>
+          <article class="post__content">
+              
+<p><code>Get the data in Kaggle </code><a href="https://www.kaggle.com/jcacperalta/twice-korean-singles-lines">here</a></p>
+<p><code>This is an update to a 2-part data analysis post. For a more in-depth discussion of the concepts I used here, please check out Part 1</code><a href="https://jcacperalta.github.io/blog/twice-analysis-part1/">here</a> <code>and Part 2</code><a href="https://jcacperalta.github.io/blog/twice-analysis-part2/">here</a></p>
+<hr>
+<p>The 2-part network science analysis on my favorite kpop girl group TWICE has been one of my favorite works so far, and it brings me so much joy to learn that <a href="https://www.rappler.com/entertainment/music/twice-renews-contract-with-jyp-entertainment/">all of the members have recently renewed</a> in the company again to continue creating music for us!  It&rsquo;s been more a year since I posted this and I thought, I should probably renew the analysis too to give you the most updated insights!</p>
+<p>In this blog post, I recreated the 2 interactive charts&ndash;the chord diagram and interactive network&ndash; I made before, but this time, including their Korean singles after 2020- Alcohol Free (2021), Scientist (2021) and the recently released Talk That Talk (2022).</p>
+<p>I would also discussing the updated insights in relation to insights in the previous blog posts (pre-2021 singles) to how TWICE had changed, or remained the same, durign the most recent 2 years.</p>
+<p>You may scroll to find the updated visualizations or use the links below to navigate:</p>
+<p><a name="nav"></a></p>
+<ol>
+<li><a href="#twices-line-succession-chord-diagram-remains-largely-unchanged">Line succession chord diagram</a></li>
+<li><a href="#new-edges-in-twices-all-songs-line-succession-network">Line succession networks</a>
+<br></li>
+</ol>
+<h2 id="twices-line-succession-chord-diagram-remains-largely-unchanged">TWICE&rsquo;s line succession chord diagram remains largely unchanged<a class="anchor" href="#twices-line-succession-chord-diagram-remains-largely-unchanged">#</a></h2>
+<iframe width="100%" height="870" name="iframe" src="/viz/twice-analysis-update-2022/chord_diagram/index.html" frameborder="0" scrolling="no"></iframe>
+<p><a href="#nav">back to top</a></p>
+<br>
+<br>
+<p>Not much had changed in the updated chord diagram showing TWICE&rsquo;s line successions (review how line succession is defined <a href="https://jcacperalta.github.io/blog/twice-analysis-part1/#what-is-line-succession">here</a>). For this case, we are counting the succession pairs for all the Korean songs irrespective of order (undirected edges), i.e. a Jihyo -&gt; Sana succession is deemed equivalent to a Sana -&gt; Jihyo succession.</p>
+<p><strong>1. The Top 5 most frequently occurring succesion pairs are still the Top 5 we saw using pre-2021 singles</strong>
+<br>
+<br></p>
+<table>
+<thead>
+<tr>
+<th>Member1</th>
+<th>Member2</th>
+<th>2022 Count</th>
+<th>2020 Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dahyun</td>
+<td>Chaeyoung</td>
+<td>44</td>
+<td>41</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>Nayeon</td>
+<td>44</td>
+<td>39</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>Dahyun</td>
+<td>28</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Sana</td>
+<td>Tzuyu</td>
+<td>28</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>Jeongyeon</td>
+<td>28</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<br>
+We now have two pairs on the top spot with 44 occurences: (Dahyun, Chaeyoung), the rap duo, and (Jihyo, Nayeon), the power vocals.
+<p>The next three are also now tied at 28 occurences:</p>
+<ul>
+<li>the subvocalists (Sana, Tzuyu) mostly during bridge and verse lines;</li>
+<li>main vocals (Jihyo, Jeongyeon) transition during prechorus or last chorus;</li>
+<li>and (Jihyo, Dahyun) that represents a chorus-rap or rap-chorus transition.</li>
+</ul>
+<p><strong>2. The Top 5 least frequently occurring succesion pairs have been observed slightly more often</strong>
+<br>
+<br></p>
+<table>
+<thead>
+<tr>
+<th>Member1</th>
+<th>Member2</th>
+<th>2022 Count</th>
+<th>2020 Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dahyun</td>
+<td>Mina</td>
+<td>9</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Dahyun</td>
+<td>Sana</td>
+<td>9</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Momo</td>
+<td>Chaeyoung</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Tzuyu</td>
+<td>Chaeyoung</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Tzuyu</td>
+<td>Jeongyeon</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Sana</td>
+<td>Jeongyeon</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>The first 4 pairs in the table are occurences where Dahyun and Chaeyoung had 1st/2nd verse parts that are succeeded by main/subvocals Mina, Sana, Tzuyu, and Momo.</p>
+<p>Transitions of the subvocals Tzuyu and Sana to and from Jeongyeon are still relatively few, with (Tzuyu, Jeongyeon) getting some more occurences in recent 2 years.</p>
+<p>Finally, the rarest succession pair, (Sana, Jeongyeon), still hasn&rsquo;t occured again since Heart Shaker (2017)!</p>
+<p><strong>3. Updated total and unique number of succession pairs per Korean single</strong></p>
+<p><img src="/images/blog/twice-analysis-update-2022/total_succession_pairs_per_song.png" alt="Total line succession pairs per song"></p>
+<p>The fast and catchy Heart Shaker (2017) still has the most total and unique successions pairs with 69 and 27 pairs respectively.</p>
+<p>The newer songs, Alcohol Free (2021), Scientist (2021) and Talk That Talk (2022) had relatively fewer sucessions ay 15th, 13th and 11th place respectively. They also have a bit higher unique succession pairs than the rest of the songs.</p>
+<h2 id="new-edges-in-twices-all-songs-line-succession-network">New edges in TWICE&rsquo;s ALL SONGS line succession network<a class="anchor" href="#new-edges-in-twices-all-songs-line-succession-network">#</a></h2>
+<iframe width="100%" height="870" name="iframe" src="/viz/twice-analysis-update-2022/interactive_network/index.html" frameborder="0" scrolling="no"></iframe>
+<p><a href="#nav">back to top</a>
+<br>
+<br></p>
+<p>The line succession networks above show the song&rsquo;s stucture, but this time, it takes into account the order of succession by setting it up as a directed network. (review the properties of a line succession network <a href="https://jcacperalta.github.io/blog/twice-analysis-part2/#what-are-the-properties-of-the-line-succession-network">here</a>)</p>
+<p><strong>1. Changes in the ALL SONGS line succession network</strong></p>
+<p>To recap, the ALL SONGS network represents the top 30% most frequently occurring line succession pairs in TWICE&rsquo;s Korean singles.</p>
+<p>When we include 3 more songs from 2021-2022, the line succession frequency threshold for making it to the top 30% increased from 8 to 9 successions. This translated to 3 new edges and 3 dropped edges in the new network shown in the table below:</p>
+<br>
+<br>
+<table>
+<thead>
+<tr>
+<th>New edges (2022)</th>
+<th>2022 Count</th>
+<th>Dropped edges  (2020)</th>
+<th>2022 Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jihyo -&gt; Dahyun</td>
+<td>10</td>
+<td>Nayeon -&gt; Dahyun</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Nayeon -&gt; Tzuyu</td>
+<td>10</td>
+<td>Nayeon -&gt; Momo</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Jihyo -&gt; Chaeyoung</td>
+<td>9</td>
+<td>Mina -&gt; Tzuyu</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+Two of the new edges Jihyo connecting to the 2 rappers, Dahyun and Chaeyoung, which is the result of more verse lines for the latter two. Another new edge is Nayeon to Tzuyu, which had 3 more occurences. I think this indicates that TWICE is now showcasing more of Tzuyu's vocals in the past 2 years.
+<p>Those edges that were present in the pre-2021 ALL songs network but were dropped in the update were just 1 occurence fewer than the threshold. Two connect Nayeon to Dahyun and Momo, making Nayeon slightly less connected to TWICE&rsquo;s rap line.</p>
+<p>Finally (Mina -&gt; Tzuyu) was also dropped, but interestingly, the reverse succession, (Tzuyu -&gt; Mina) (15 occurences) stayed among the most frequent successions&ndash;an ordering choice perhaps?</p>
+<p><strong>2. Changes to group positions inferred using the ALL SONGS line succession network</strong></p>
+<figure>
+    <img src="/images/blog/twice-analysis-update-2022/twice_all_songs_network_parts.png"
+         alt="Structures in TWICE&amp;rsquo;s line succession network reveal the member&amp;rsquo;s group position" width="auto" height="300px"/> <figcaption>
+            <p>Structures in TWICE&rsquo;s line succession network reveal the member&rsquo;s group position</p>
+        </figcaption>
+</figure>
+
+<p>As recap, we have discussed that the ALL SONGS network revealed TWICE member&rsquo;s group positions that wasnt anywhere encoded in the data. There has been some slight changes given our new and dropped edges.</p>
+<ol>
+<li>
+<p><strong>Subvocals/Bridge group</strong> - This group is composed of Sana, Tzuyu, and Mina, who most often sing the song&rsquo;s bridges and verse lines. The (Mina -&gt; Tzuyu) edge was dropped and was replaced by (Nayeon -&gt; Tzuyu).</p>
+</li>
+<li>
+<p>and 3. <strong>Main vocal/Chorus group</strong> and <strong>Prechorus group</strong>- With the new and dropped edges, the connections between power vocalists Nayeon, Jihyo and Jeongyeon rand the prechorus group Mina and Momo, are now symmetrical, as if they were one big group. The only thing that would separate the prechorus group is their proximity to the Subvocals group, while the Main Vocal/Chorus group connects to the Rap group.</p>
+</li>
+<li>
+<p><strong>Rap group</strong> - Lastly, the group at the far right is composed of the rappers Chaeyoung and Dahyun. If we follow the updated ALL SONGS network to simulate a TWICE song, the rap group takes over after a Jihyo line, which was a Nayeon line if we follow the pre-2021 ALL SONGS network.</p>
+</li>
+</ol>
+<p><strong>3. Changes in the centrality metrics of each member</strong></p>
+<p>We compute the new centrality metrics of each member averaged across all songs and compare them with the pre-2021 values to check out how they changed in 2 years. (review how to interpret network centrality metrics <a href="https://jcacperalta.github.io/blog/twice-analysis-part2/#how-can-we-interpret-centrality-metrics-computed-from-the-line-succession-networks">here</a>)</p>
+<p><u>1. A decrease in betweenness centrality among most members</u>
+<br>
+<br></p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>2020 btwn_c</th>
+<th>2022 btwn_c</th>
+<th>trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nayeon</td>
+<td>0.233</td>
+<td>0.228</td>
+<td>▼▼</td>
+</tr>
+<tr>
+<td>Jeongyeon</td>
+<td>0.087</td>
+<td>0.088</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Momo</td>
+<td>0.138</td>
+<td>0.126</td>
+<td>▼▼</td>
+</tr>
+<tr>
+<td>Sana</td>
+<td>0.093</td>
+<td>0.091</td>
+<td>▼</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>0.238</td>
+<td>0.232</td>
+<td>▼▼</td>
+</tr>
+<tr>
+<td>Mina</td>
+<td>0.201</td>
+<td>0.190</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Dahyun</td>
+<td>0.136</td>
+<td>0.135</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Chaeyoung</td>
+<td>0.136</td>
+<td>0.139</td>
+<td>▲</td>
+</tr>
+<tr>
+<td>Tzuyu</td>
+<td>0.139</td>
+<td>0.131</td>
+<td>▼▼</td>
+</tr>
+</tbody>
+</table>
+<br>
+<ul>
+<li>From the new betweenness centrality values, we could see that Jihyo, Nayeon and Mina still has the most connective roles among the members.</li>
+<li>The least connective ones from pre-2021, Jeongyeon, Sana and Dahyun/Chaeyoung, still occupy the same ranks.</li>
+<li>Looking at the two betweenness centrality measures, Jihyo now has a more connective role than Nayeon</li>
+<li>Most members&rsquo;s betweenness centrality masures have largely decreased while a few remained constant. This means that fewer instances where song parts done by a couple of members are consistently succeeded by a single member, which could be a reuslt of the group&rsquo;s diversifying line distributions.</li>
+<li>Only Chaeyoung had a slight increase, which may have been due to her new verse lines.</li>
+</ul>
+<p><u>2. Slight increase in eigenvector centrality among all members</u>
+<br>
+<br></p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>2020 eigen_c</th>
+<th>2022 eigen_c</th>
+<th>trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nayeon</td>
+<td>0.357</td>
+<td>0.364</td>
+<td>▲▲</td>
+</tr>
+<tr>
+<td>Jeongyeon</td>
+<td>0.279</td>
+<td>0.290</td>
+<td>▲▲</td>
+</tr>
+<tr>
+<td>Momo</td>
+<td>0.303</td>
+<td>0.296</td>
+<td>▼▼</td>
+</tr>
+<tr>
+<td>Sana</td>
+<td>0.312</td>
+<td>0.311</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Jihyo</td>
+<td>0.367</td>
+<td>0.368</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Mina</td>
+<td>0.353</td>
+<td>0.353</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Dahyun</td>
+<td>0.289</td>
+<td>0.288</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Chaeyoung</td>
+<td>0.280</td>
+<td>0.284</td>
+<td>▲▲</td>
+</tr>
+<tr>
+<td>Tzuyu</td>
+<td>0.285</td>
+<td>0.284</td>
+<td>=</td>
+</tr>
+</tbody>
+</table>
+<br>
+<ul>
+<li>
+<p>Recomputed eigenvector centrality values resulted into the same member metric rankings. Jihyo, Nayeon and Mina still had the most dominant roles in their songs.</p>
+</li>
+<li>
+<p>Most members showed the same or very slight increase in eigenvector centrality value, except for the Nayeon, Jeongyeon and Chaeyoung. Nayeon has increased her dominance according to this metric by 0.007. Jeongyeon, from being the least dominant, increased to 6th, and Chaeyoung, while being tied with Dahyun in last place, increased her metric value by 0.004 marks.</p>
+</li>
+<li>
+<p>Momo has the largest and only decrease in this metric, which may be a result of her receiving fewer lines in recent songs.</p>
+</li>
+</ul>
+<h3 id="in-summary">In summary<a class="anchor" href="#in-summary">#</a></h3>
+<p>We have updated our analysis of TWICE&rsquo;s line succession network with the addition of the 3 most recent songs in the dataset&ndash;Alcohol Free (2021), Scientist (2021) and the recently released Talk That Talk (2022).</p>
+<ul>
+<li>
+<p>Not much had changed in terms of line succession pair counts. The most frequent succession pairs retained their ranks while there were a few rank movements in the less frequent pairs.</p>
+</li>
+<li>
+<p>The updated ALL SONGS line succession network showed a more connected prechorus-main vocals group with Jihyo connecting more to the rap group and Nayeon connecting more to Tzuyu.</p>
+</li>
+<li>
+<p>There has been an overall decrease in betweenness centrality metric and slight increase in eigenvector centrality of each of the members in more recent singles, signaling the group&rsquo;s trend of diversifying their line distributions.</p>
+</li>
+</ul>
+<h2 id="recommendations">Recommendations<a class="anchor" href="#recommendations">#</a></h2>
+<p>Here are some suggestions on how to improve the analysis:</p>
+<ul>
+<li>
+<p>Most say that the shift in TWICE&rsquo;s style occurred during Fancy (2019)- what would be the detected changes when we set the comparison threshold at this point?</p>
+</li>
+<li>
+<p>Take the analysis a step deeper and implement an audio analysis of TWICE&rsquo;s vocal signatures across the years to see how they grow!</p>
+</li>
+<li>
+<p>The analysis steps are pretty robust and could most definitely be applied for a different kpop group! Which one should I try next?</p>
+</li>
+</ul>
+<br>
+<br>
+Thanks and see you again in the next blog!
+<br>
+<br>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    
+    
+    
+    
+    
+    
+    
+    </ul>
+
+ 
+          
+            <div class="pagination">
+  
+    <a class="pagination__item" href="https://jcacperalta.github.io/blog/spotify-streams-part2/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Inflation and inequality in the music streaming market</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="GitHub"
+         style="background-image: url(/images/social/github.svg)" 
+         href="https://github.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Email"
+         style="background-image: url(/images/social/email.svg)" 
+         href="mailto:jcacperalta@gmail.com"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="LinkedIn"
+         style="background-image: url(/images/social/linkedin.svg)" 
+         href="https://linkedin.com/in/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Scholar"
+         style="background-image: url(/images/social/scholar.svg)" 
+         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2020</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

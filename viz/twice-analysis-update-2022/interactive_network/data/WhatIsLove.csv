@@ -1,0 +1,17 @@
+source,target,num_occurences,is_common,source_btwn_c,target_btwn_c,source_btwn_c_rank,target_btwn_c_rank,source_eigen_c,target_eigen_c,source_eigen_c_rank,target_eigen_c_rank,source_duration,target_duration,source_duration_rank,target_duration_rank
+Chaeyoung,Nayeon,1,1,0.2857,0.3036,3rd,2nd,0.3047,0.5634,5th,1st,15.06,26.36,3rd,1st
+Chaeyoung,Sana,1,0,0.2857,0.1607,3rd,5th,0.3047,0.3101,5th,4th,15.06,13.66,3rd,6th
+Dahyun,Chaeyoung,1,1,0.1429,0.2857,7th,3rd,0.2572,0.3047,7th,5th,14.16,15.06,5th,3rd
+Dahyun,Sana,1,0,0.1429,0.1607,7th,5th,0.2572,0.3101,7th,4th,14.16,13.66,5th,6th
+Jeongyeon,Mina,1,0,0.125,0.3393,8th,1st,0.3109,0.295,3rd,6th,13.34,9.8,7th,9th
+Jeongyeon,Nayeon,2,0,0.125,0.3036,8th,2nd,0.3109,0.5634,3rd,1st,13.34,26.36,7th,1st
+Jihyo,Momo,1,0,0.2321,0.125,4th,8th,0.4054,0.2237,2nd,8th,17.72,10.52,2nd,8th
+Jihyo,Nayeon,1,1,0.2321,0.3036,4th,2nd,0.4054,0.5634,2nd,1st,17.72,26.36,2nd,1st
+Mina,Chaeyoung,1,0,0.3393,0.2857,1st,3rd,0.295,0.3047,6th,5th,9.8,15.06,9th,3rd
+Mina,Dahyun,1,0,0.3393,0.1429,1st,7th,0.295,0.2572,6th,7th,9.8,14.16,9th,5th
+Momo,Mina,1,1,0.125,0.3393,8th,1st,0.2237,0.295,8th,6th,10.52,9.8,8th,9th
+Nayeon,Jeongyeon,3,1,0.3036,0.125,2nd,8th,0.5634,0.3109,1st,3rd,26.36,13.34,1st,7th
+Nayeon,Jihyo,1,1,0.3036,0.2321,2nd,4th,0.5634,0.4054,1st,2nd,26.36,17.72,1st,2nd
+Sana,Tzuyu,2,1,0.1607,0.1607,5th,5th,0.3101,0.1711,4th,9th,13.66,14.341,6th,4th
+Tzuyu,Dahyun,1,0,0.1607,0.1429,5th,7th,0.1711,0.2572,9th,7th,14.341,14.16,4th,5th
+Tzuyu,Jihyo,1,0,0.1607,0.2321,5th,4th,0.1711,0.4054,9th,2nd,14.341,17.72,4th,2nd
