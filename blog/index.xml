@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jcacperalta.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3 tips on winning a hackathon as a solo contestant</title>
+      <link>https://jcacperalta.github.io/blog/winning-a-hackathon/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/winning-a-hackathon/</guid>
+      <description>Things I learned while participating on my own in my first hackathon</description>
+    </item>
     
     <item>
       <title>Insights from TWICE&#39;s line succession networks: 2022 Update</title>
