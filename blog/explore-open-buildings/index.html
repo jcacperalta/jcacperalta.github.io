@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <title>Exploring Google Open Buildings data with Geowrangler | jcperalta</title>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script type="text/javascript">
+    import Typewriter from 'typewriter-effect/dist/core';
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="gis , building , opendata , geospatial , viz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight+50 + 'px';
+    }
+  </script>
+
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Exploring Google Open Buildings data with Geowrangler" />
+  <meta name="twitter:description" content=""
+  />
+  <meta name="twitter:site" content="@https://twitter.com/jcacperalta" />
+  <meta name="twitter:creator" content="@https://twitter.com/jcacperalta" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/post.min.62e31da07abb7eb04ebf3b56c1a169d53e8b3b5742c978b13690dc70bd042a3f.css" integrity="sha256-YuMdoHq7frBOvztWwaFp1T6LO1dCyXixNpDccL0EKj8="/>
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jcacperalta.github.io"
+      },
+      "articleSection" : "blog",
+      "name" : "Exploring Google Open Buildings data with Geowrangler",
+      "headline" : "Exploring Google Open Buildings data with Geowrangler",
+      "description" : "",
+      "inLanguage" : "en-US",
+      "author" : "jcperalta",
+      "creator" : "jcperalta",
+      "publisher": "jcperalta",
+      "accountablePerson" : "jcperalta",
+      "copyrightHolder" : "jcperalta",
+      "copyrightYear" : "2023",
+      "datePublished": "2023-02-22 00:00:00 \x2b0800 PST",
+      "dateModified" : "2023-02-22 00:00:00 \x2b0800 PST",
+      "url" : "https:\/\/jcacperalta.github.io\/blog\/explore-open-buildings\/",
+      "wordCount" : "1405",
+      "keywords" : ["gis", "building", "opendata", "geospatial", "viz", "Blog"]
+    }
+  
+  </script>
+<meta property="og:title" content="Exploring Google Open Buildings data with Geowrangler" />
+<meta property="og:description" content="Initial insights on Google&rsquo;s Open Buildings dataset in Rizal Province, Philippines" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jcacperalta.github.io/blog/explore-open-buildings/" />
+<meta property="og:image" content="https://jcacperalta.github.io/images/blog/explore-open-buildings/explore_open_buildings_preview.png" />
+<meta property="article:published_time" content="2023-02-22T00:00:00+08:00" />
+<meta property="article:modified_time" content="2023-02-22T00:00:00+08:00" /><meta property="og:site_name" content="jcperalta" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jcacperalta.github.io/images/blog/explore-open-buildings/explore_open_buildings_preview.png"/>
+
+<meta name="twitter:title" content="Exploring Google Open Buildings data with Geowrangler"/>
+<meta name="twitter:description" content="Initial insights on Google&rsquo;s Open Buildings dataset in Rizal Province, Philippines"/>
+
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/works">works</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Exploring Google Open Buildings data with Geowrangler<span class="fancy">.</span></h1>
+            
+            <time datetime="2023-02-22 00:00:00 &#43;0800 PST" class="post__date"
+            >Feb 22 2023</time>
+            
+          </header>
+          <article class="post__content">
+              
+<p><code>Fork this project in Github </code><a href="https://github.com/jcacperalta/explore-open-buildings">here</a>
+<br>
+<br></p>
+<hr>
+<br>
+<p>Looking at maps is part of my daily job as a geospatial data scientist. One of our recurring project themes involve finding objects in satellite imagery&ndash;farms, roads, houses etc. It may be easy for human eyes to identify these at a glance but the same cannot be said for a computer. To do this, it needs a good set of images with <em>annotations</em> that tell which pixels are the objects and which ones are background.</p>
+<p>Compiling a good training set is very tedious manual work. However, in recent years, wide scale detection of <strong>building footprints</strong> has been made possible due to efforts of leading companies and their recent advances in computing power. We can already use these for model training if we can validate them over specific areas of interest.</p>
+<p>In this blog I would like to present Google&rsquo;s <a href="https://sites.research.google/open-buildings">Open Building dataset</a>  and see how it performs over my hometown, Rizal province.</p>
+<p>I also invite you to check how well it performs in your area of choice using the widget below:</p>
+<br>
+<br>
+<iframe width="90%" height="800" name="iframe" src="https://sites.research.google/open-buildings/?lat=14.61008179283835&lng=121.11556589053176&zoom=17#explore" frameborder="0" scrolling="no"></iframe>
+<h2 id="what-is-the-open-buildings-dataset">What is the Open Buildings dataset?<a class="anchor" href="#what-is-the-open-buildings-dataset">#</a></h2>
+<p>On Oct 11 2022, Google announced in their <a href="https://blog.google/around-the-globe/google-africa/how-mapping-the-worlds-buildings-makes-a-difference/">blog</a> that their Open Buildings product would now expand to cover South and Southeast Asia, and that includes the Philippines.</p>
+<p>According to their documentation, it contains 817 million building detections, across a total area of 39.1 M sq km. Aside from the polygon of the footprint, they also provide (1) the building area, (2) a confidence score indicating the level of certainty that the footprint is a building, and (3) a <a href="https://maps.google.com/pluscodes/">Plus Code</a> corresponding to the center of the building.</p>
+<p>You may view the specs and download your copy by following the instructions in their <a href="https://sites.research.google/open-buildings">blog</a></p>
+<h2 id="exploring-the-data-using-geowrangler">Exploring the data using Geowrangler<a class="anchor" href="#exploring-the-data-using-geowrangler">#</a></h2>
+<p>For this blog, I was eager to use Thinking Machine&rsquo;s <a href="https://geowrangler.thinkingmachin.es/">Geowrangler</a> python module for my geospatial analysis. I was  involved in the team who tested and enhanced some features of the current version.</p>
+<p>With Geowrangler, it is very easy to generate statistics over geospatial data types (vector and raster). What I wrote in multiple lines of code before can now be done quickly in convenient one-liners. Please look at the <a href="https://github.com/jcacperalta/explore-open-buildings">repo</a> notebooks for complete examples, but I&rsquo;ll also show you some snippets in the following sections.</p>
+<p>To get a high-level understanding of the dataset, we could answer some of these preliminary questions.</p>
+<h4 id="q-how-large-are-the-buildings-detected-in-rizal">Q: How large are the buildings detected in Rizal?</h4>
+<p>The area distribution of the detected footprints are shown below. There were footprints detected with area as small as 2 m² and as large as 7800 m². Here I show only up to 300 m², which covers 99% of all detected footprints.</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_area_hist_.png" /></p>
+<figcaption><p>Distribution of Open Buildings footprint areas in Rizal Province, Philippines</p>
+</figcaption>
+<p>Half of the footprints are below 35 m², which seems too small a size for a majority chunk of footprints (presumably residential areas).  Furthermore, about three-quarters of the footprints have area smaller than 64 m². Could these be misidentified buildings?</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_confidence_per_area.png" /></p>
+<figcaption><p>Distibution of confidence across building footprint areas</p>
+</figcaption>
+<p>When we plot confidence across footprint area ranges, we see that they are directly proportional&ndash;confidence <em>increases</em> as footprint size increases. Most of the footprints with area &lt;30 m² typically have low to medium confidence, indicating that most are likely false positives. Conversely, the detection model assigned high confidence for larger building footprints (&gt;100 m²).</p>
+<h4 id="q-which-citymunicipality-had-the-most-identified-buildings">Q: Which city/municipality had the most identified buildings?</h4>
+<p>For this analysis, we use the <a href="https://geowrangler.thinkingmachin.es/">Geowrangler</a> one-liner <code>vector_zonal_stats</code> to obtain statistics using footprints that fall within the boundaries of Rizal&rsquo;s cities and municipalities.</p>
+<pre><code class="language-python">data_gdf = vzs.create_zonal_stats(
+    mun_bounds, # admin boundaries
+    buildings, # building footprints
+    overlap_method=&quot;intersects&quot;, # method for determining overlap
+    aggregations=[dict(func=&quot;count&quot;, output=&quot;bldg_count&quot;, fillna=True),
+                 dict(column=&quot;confidence&quot;, func=&quot;mean&quot;, output=&quot;bldg_confidence_mean&quot;, fillna=True),
+                 dict(column=&quot;area_in_meters&quot;, func=&quot;mean&quot;, output=&quot;bldg_area_mean&quot;, fillna=True)],
+)
+</code></pre>
+<p>This generates a <code>GeoDataFrame</code> with the relevant statistic per city/municipality. Lets look at the results below.</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_count.png" /></p>
+<figcaption><p>Building footprint counts per city/municipality in Rizal Province</p>
+</figcaption>
+<p>The City of Antipolo leads with 175,000+ detected footprints, which is twice the count of the next-in-rank municipalities Rodriguez, Cainta, Taytay and Binangonan. The municipalities with the least detected footprints are Pililia, Cardona and Jala-jala, which are also the least populous in Rizal.</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_count_per_area_.png" /></p>
+<figcaption><p>Building footprint counts per area for each city/municipality in Rizal Province</p>
+</figcaption>
+<p>However, when we plot the number of building footprints <em>per unit area</em>, Cainta now leads with about 4000+ footprints per km². Taytay, Binangonan are still among the top, while City of Antipolo is now at 7th due to its size. The municipality with the least detected footprints per unit area is now Tanay, with &lt;100 footprints per km².</p>
+<h4 id="q-which-locales-have-the-most-identified-buildings">Q: Which locales have the most identified buildings?</h4>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_count_map.png" /></p>
+<figcaption><p>Map of building footprint counts per city/municipality in Rizal Province</p>
+</figcaption>
+<p>When plotted in a map, we see that eastern Rizal has more detected footprints than western Rizal, which makes more sense since these areas have denser built-up areas because they are closer to Metro Manila.</p>
+<p>To check in better detail, we can also get statistics for areas smaller than city/municipal boundaries.</p>
+<p>This is also very easy to do in <a href="https://geowrangler.thinkingmachin.es/">Geowrangler</a>. First, we generate Bing tiles at zoom level 15 using <code>BingTileGridGenerator</code>, and then use the instantiated class to generated the desired grid within the boundaries using <code>generate_grid</code>.</p>
+<pre><code class="language-python"># Setup generator
+bing_tile_grid_generator = grids.BingTileGridGenerator(15) 
+# Generate grids
+bing_tile_gdf = bing_tile_grid_generator.generate_grid(mun_bounds) 
+</code></pre>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_bldgs_gridded_stats_.png" /></p>
+<figcaption><p>Gridded statistics of building footprint counts in Rizal Province</p>
+</figcaption>
+<p>The map plots of footprint count, median area. and median confidence per grid are shown above.</p>
+<ul>
+<li>
+<p>The locales with highest count are concentrated along the eastern border of Rizal with Metro Manila, the densest being the neighborhoods near the <a href="https://goo.gl/maps/ssCDivaydg8P8TkB9">old Taytay Market</a>.</p>
+</li>
+<li>
+<p>The median area map reflects the majority &lt; 30m² footprints we saw in the bar plots. The ones higher are gated subdivisions in Antipolo, and the bright spot in the middle is the location of <a href="https://goo.gl/maps/dbctr8RXa5mbJLDd7">Robina Farms</a>.</p>
+</li>
+<li>
+<p>Most footprints have confidence between the 0.75-0.85 range.</p>
+</li>
+</ul>
+<h2 id="performance-and-spot-checking-over-rizal-province">Performance and spot-checking over Rizal province<a class="anchor" href="#performance-and-spot-checking-over-rizal-province">#</a></h2>
+<p>I inspected a few areas to see how well the footprint captures the actual building boundaries as seen in the satellite images.</p>
+<p>Click on the links to get redirected to an interactive map showing the footprints overlapped on Google Maps.</p>
+<h4 id="strengths">Strengths</h4>
+<ol>
+<li>I&rsquo;m amazed with these very accurate outlines in this urban Antipolo <a href="https://sites.research.google/open-buildings/?lat=14.613002604717646&amp;lng=121.11700095305285&amp;zoom=18#explore">subdivision</a>. This is as good as a human&rsquo;s annotation!</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_1.png" /></p>
+<ol start="2">
+<li>It does an excellent job in this Taytay <a href="https://sites.research.google/open-buildings/?lat=14.557959455465983&amp;lng=121.14026415976615&amp;zoom=18#explore">area</a>, showing a variety of building sizes and confidence values.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_2.png" /></p>
+<ol start="3">
+<li>This San Mateo <a href="https://sites.research.google/open-buildings/?lat=14.683537801912049&amp;lng=121.11897500435235&amp;zoom=18#explore">neighborhood</a>
+with smaller and light materials was also captured well, although with less confidence.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_3.png" /></p>
+<ol start="4">
+<li>It also has some skill on low density rural neighborhoods like <a href="https://sites.research.google/open-buildings/?lat=14.538460446425407&amp;lng=121.3373683164643&amp;zoom=18#explore">this</a> in Tanay, Rizal and was able to avoid tree canopy and vegetation.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_4.png" /></p>
+<ol start="5">
+<li>I&rsquo;m also impressed when it detected <a href="https://sites.research.google/open-buildings/?lat=14.469251786168483&amp;lng=121.22947077583318&amp;zoom=17#explore">fisherfolk shelter</a> at fish ponds along Laguna Bay at Cardona. Pretty robust!</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_5.png" /></p>
+<h4 id="weaknesses">Weaknesses</h4>
+<ol>
+<li>Entire ghost neighborhoods were detected over <a href="https://sites.research.google/open-buildings/?lat=14.553157247602595&amp;lng=121.22171875301596&amp;zoom=18#explore">this part</a> of Teresa, where the model assigned high confidence on footprints detected over barren land. There are signs that new subdivisions are being erected around the area, but none for this particular one. I dont know how many neighborhoods like this exist in the whole dataset.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_6.png" /></p>
+<ol start="2">
+<li>It had some skill in detecting row houses in this part of <a href="https://sites.research.google/open-buildings/?lat=14.493202595974273&amp;lng=121.21579241933452&amp;zoom=18#explore">Cardona</a>, but it still detects whole blocks in barren land. It seems like the model develops some recognition of the <em>shape of roads</em> in the area and in turn, infers that buildings of this type must exist there&ndash;although the image says otherwise. What do you think?</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_7.png" /></p>
+<ol start="3">
+<li>Dense and unordered neighborhoods witout separating roads are understandably difficult to capture, such as <a href="https://sites.research.google/open-buildings/?lat=14.449480896722925&amp;lng=121.20150774527467&amp;zoom=19#explore">this place</a> in Binangonan.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_8.png" /></p>
+<h2 id="im-interested-in-open-buildings-and-geowrangler-how-can-i-learn-more">Im interested in Open Buildings and Geowrangler! How can I learn more?<a class="anchor" href="#im-interested-in-open-buildings-and-geowrangler-how-can-i-learn-more">#</a></h2>
+<p>What I did here is by no means a comprehensive check of this dataset. It is a very promising dataset, but before you use this as training data, <strong>please do a quick visual inspection of the locale you intend to use</strong>. This way, we can prevent your model from being trained by some false detections.</p>
+<p>You may refer to the <a href="https://sites.research.google/open-buildings/#faq">Google Open Buildings FAQ</a> for more details.</p>
+<p>I also encourage you to try <a href="https://geowrangler.thinkingmachin.es/">Geowrangler</a>. Aside from computing statistics and generate grids like what I did here, it can also validate geometries, analyze raster data, and even download the most-often-used dataset in the industry (OpenStreetMap, Ookla, and Nightlights (soon!)).</p>
+<p>Please check out these other features, and if you want to raise a discussion or contribute to the code, you are more than welcome to write to us <a href="https://github.com/thinkingmachines/geowrangler/discussions">here</a>.</p>
+<p>I hope this was useful! Thank you so much and see you in the next blog!</p>
+<br>
+<hr>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    
+    
+    
+    
+    </ul>
+
+ 
+          
+            <div class="pagination">
+  
+    <a class="pagination__item" href="https://jcacperalta.github.io/blog/winning-a-hackathon/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">3 tips on winning a hackathon as a solo contestant</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__icon" title="Twitter"
+         style="background-image: url(/images/social/twitter.svg)" 
+         href="https://twitter.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="GitHub"
+         style="background-image: url(/images/social/github.svg)" 
+         href="https://github.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Email"
+         style="background-image: url(/images/social/email.svg)" 
+         href="mailto:jcacperalta@gmail.com"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="LinkedIn"
+         style="background-image: url(/images/social/linkedin.svg)" 
+         href="https://linkedin.com/in/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="YouTube"
+         style="background-image: url(/images/social/youtube.svg)" 
+         href="https://www.youtube.com/channel/UCbCGhJ-dBD5EqYfkYd96gMw"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Scholar"
+         style="background-image: url(/images/social/scholar.svg)" 
+         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2020</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
