@@ -82,7 +82,7 @@
       "datePublished": "2023-02-22 00:00:00 \x2b0800 PST",
       "dateModified" : "2023-02-22 00:00:00 \x2b0800 PST",
       "url" : "https:\/\/jcacperalta.github.io\/blog\/explore-open-buildings\/",
-      "wordCount" : "1405",
+      "wordCount" : "1547",
       "keywords" : ["gis", "building", "opendata", "geospatial", "viz", "Blog"]
     }
   
@@ -159,6 +159,9 @@
 <br></p>
 <hr>
 <br>
+<ul>
+<li>*JCP: I&rsquo;ve been informed by some colleagues that the detected &ldquo;ghost neighborhoods&rdquo; I&rsquo;ve reported are actually existing recent neighborhoods that were just not shown in the default basemap used by Google in the embedded web app (although footnote claims its (c) 2023. The footprints detected these neighborhoods quite accurately! I apologize for the wrong results and added edits to correct this. Thank you so much for your feedback! *</li>
+</ul>
 <p>Looking at maps is part of my daily job as a geospatial data scientist. One of our recurring project themes involve finding objects in satellite imagery&ndash;farms, roads, houses etc. It may be easy for human eyes to identify these at a glance but the same cannot be said for a computer. To do this, it needs a good set of images with <em>annotations</em> that tell which pixels are the objects and which ones are background.</p>
 <p>Compiling a good training set is very tedious manual work. However, in recent years, wide scale detection of <strong>building footprints</strong> has been made possible due to efforts of leading companies and their recent advances in computing power. We can already use these for model training if we can validate them over specific areas of interest.</p>
 <p>In this blog I would like to present Google&rsquo;s <a href="https://sites.research.google/open-buildings">Open Building dataset</a>  and see how it performs over my hometown, Rizal province.</p>
@@ -257,18 +260,22 @@ with smaller and light materials was also captured well, although with less conf
 </ol>
 <p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_5.png" /></p>
 <h4 id="weaknesses">Weaknesses</h4>
-<ol>
-<li>Entire ghost neighborhoods were detected over <a href="https://sites.research.google/open-buildings/?lat=14.553157247602595&amp;lng=121.22171875301596&amp;zoom=18#explore">this part</a> of Teresa, where the model assigned high confidence on footprints detected over barren land. There are signs that new subdivisions are being erected around the area, but none for this particular one. I dont know how many neighborhoods like this exist in the whole dataset.</li>
-</ol>
+<p><del>1. Entire ghost neighborhoods were detected over <a href="https://sites.research.google/open-buildings/?lat=14.553157247602595&amp;lng=121.22171875301596&amp;zoom=18#explore">this part</a> of Teresa, where the model assigned high confidence on footprints detected over barren land. There are signs that new subdivisions are being erected around the area, but none for this particular one. I dont know how many neighborhoods like this exist in the whole dataset.</del></p>
 <p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_6.png" /></p>
-<ol start="2">
-<li>It had some skill in detecting row houses in this part of <a href="https://sites.research.google/open-buildings/?lat=14.493202595974273&amp;lng=121.21579241933452&amp;zoom=18#explore">Cardona</a>, but it still detects whole blocks in barren land. It seems like the model develops some recognition of the <em>shape of roads</em> in the area and in turn, infers that buildings of this type must exist there&ndash;although the image says otherwise. What do you think?</li>
-</ol>
-<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_7.png" /></p>
+<p>EDIT: This satellite image is older than the data used by the footprint model, hence the mismatch. When we look at this in Bing Maps (see image below), it shows that this neighborhood actually exists and its footprints are actually well-captured.</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_6-1.png" /></p>
+<p><del>2. It had some skill in detecting row houses in this part of <a href="https://sites.research.google/open-buildings/?lat=14.493202595974273&amp;lng=121.21579241933452&amp;zoom=18#explore">Cardona</a>, but it still detects whole blocks in barren land. It seems like the model develops some recognition of the <em>shape of roads</em> in the area and in turn, infers that buildings of this type must exist there&ndash;although the image says otherwise. What do you think?</del></p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_7.png" /> 
+EDIT: Same case here as above. Bing Maps (see image below) contains this neighborhood and the footprints are accurate.</p>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_7-1.png" /></p>
 <ol start="3">
 <li>Dense and unordered neighborhoods witout separating roads are understandably difficult to capture, such as <a href="https://sites.research.google/open-buildings/?lat=14.449480896722925&amp;lng=121.20150774527467&amp;zoom=19#explore">this place</a> in Binangonan.</li>
 </ol>
 <p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_8.png" /></p>
+<ol start="4">
+<li>Informal settlements are also not well-detected, like <a href="https://sites.research.google/open-buildings/?lat=14.575881154476598&amp;lng=121.16998809622244&amp;zoom=18#explore">this area</a> in Antipolo.</li>
+</ol>
+<p><img class="special-img-class" src="/images/blog/explore-open-buildings/open_buildings_9.png" /></p>
 <h2 id="im-interested-in-open-buildings-and-geowrangler-how-can-i-learn-more">Im interested in Open Buildings and Geowrangler! How can I learn more?<a class="anchor" href="#im-interested-in-open-buildings-and-geowrangler-how-can-i-learn-more">#</a></h2>
 <p>What I did here is by no means a comprehensive check of this dataset. It is a very promising dataset, but before you use this as training data, <strong>please do a quick visual inspection of the locale you intend to use</strong>. This way, we can prevent your model from being trained by some false detections.</p>
 <p>You may refer to the <a href="https://sites.research.google/open-buildings/#faq">Google Open Buildings FAQ</a> for more details.</p>
