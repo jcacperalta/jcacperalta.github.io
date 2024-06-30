@@ -9,7 +9,7 @@
 		
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
 		
 		<!-- jQuery -->
@@ -29,17 +29,20 @@
 			  font-size: 14px;
 			  font-family: 'Lato', sans-serif;
 			  text-align: left;
-			  color: #757575;
+			  color:white;
 			  cursor: default;
+			  background-color: black;
 			}
 			
 			.title {
 				margin-top: 20px;
 				margin-bottom: 10px;
 				margin-left: 20px;
+				text-align: center;
 				font-size:32px;
-				font-family: 'Oswald', sans-serif;
-				color: #2B2B2B;
+				font-weight: 600; 
+				font-family: 'Playfair Display', sans-serif;
+				color: #FFFFFF;
 			}
 			
 			.texts {
@@ -49,14 +52,14 @@
 			}
 			
 			.credit {
-				color: #9E9E9E;
+				color: #FFFFFF;
 				font-size: 9px;
 				margin-bottom: 0.2em;
 			}
 			
 			.notes {
-				color: #9E9E9E;
-				font-size: 9px;
+				color: #FFFFFF;
+				font-size: 10.5px;
 			}
 			
 			.popover {
@@ -64,28 +67,35 @@
 			}
 			
 			#chart{
-			  font-size: 16px;s
+			  color: #FFFFFF;
+			  font-size: 16px;
 			  text-align: center;
-
+			  
 			}
 			
 			@media (min-width: 600px) {
 				#chart{
 					font-size: 20px;
+					color: #FFFFFF;
+					background-color: black;
 				}
 			}
 		</style>
 	</head>
 	<body>
 	
-		<div class = "title">TWICE line successions in their Korean singles (2015-2023) </div>
-		<div class = "explanation texts">
-			<p style="margin-bottom: 0em;">The visualization shows how many times a TWICE member lyric succeeeds another member in their korean singles. Successions are counted irrespective of order (e.g. a Jihyo-Nayeon succession is equivalent to a Nayeon-Jihyo succession). The thicker a line, the more often the succession pair happened.</p>
 
 		<div id = "chart"></div>
-		<div class="credit texts">Data and analysis by JC Peralta. Base viz code provided by Nadieh Bremer </div>
+		<div class = "title">TWICE Line Successions (2015-2023)</div>
+
+		<div class = "explanation texts">
+			<p style="margin-bottom: 2em;">The visualization shows how many times a TWICE member lyric succeeeds another member in their Korean singles. Successions are counted irrespective of order (e.g. a Jihyo-Nayeon succession is equivalent to a Nayeon-Jihyo succession). The thicker a line, the more often the succession pair happened.
+			</p>
+
 		<div class = "notes texts">
 			The songs considered for this analysis are:  Like Ooh Ahh (2015), Cheer Up (2016), TT (2016), Heart Shaker (2017), Knock Knock (2017), Likey (2017), Signal (2017), Dance The Night Away (2018),  What Is Love (2018), Yes or Yes (2018),  The Best Thing I Ever Did (2018), Fancy (2019), Feel Special (2019), More & More (2020), I Can't Stop Me (2020), Cry For Me (2020), Alcohol Free (2021), Scientist (2021), Talk That Talk (2022) and Set Me Free (2023) </div>
+		
+		<div class="credit texts">Data and analysis by JC Peralta. Base viz code provided by Nadieh Bremer </div>
  
 		<script src="script.js"></script>
 

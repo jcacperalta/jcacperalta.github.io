@@ -211,3 +211,11 @@ function mouseoutChord(d) {
 		.transition()
 		.style("opacity", opacityDefault);
 }//function mouseoutChord
+
+// Select all text elements inside the "titles" class and set their fill to white
+svg.selectAll(".titles text")
+    .style("fill", "white");
+
+// Select all text elements inside the "chord" class and set their fill to white
+svg.selectAll(".chord text")
+    .style("fill", "white");
