@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <title>Using Network Science to Optimize Disaster Relief in the Philippines | jcperalta</title>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script type="text/javascript">
+    import Typewriter from 'typewriter-effect/dist/core';
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="gis , building , opendata , geospatial , viz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight+50 + 'px';
+    }
+  </script>
+
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Using Network Science to Optimize Disaster Relief in the Philippines" />
+  <meta name="twitter:description" content=""
+  />
+  <meta name="twitter:site" content="@https://twitter.com/jcacperalta" />
+  <meta name="twitter:creator" content="@https://twitter.com/jcacperalta" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/post.min.62e31da07abb7eb04ebf3b56c1a169d53e8b3b5742c978b13690dc70bd042a3f.css" integrity="sha256-YuMdoHq7frBOvztWwaFp1T6LO1dCyXixNpDccL0EKj8="/>
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jcacperalta.github.io"
+      },
+      "articleSection" : "blog",
+      "name" : "Using Network Science to Optimize Disaster Relief in the Philippines",
+      "headline" : "Using Network Science to Optimize Disaster Relief in the Philippines",
+      "description" : "",
+      "inLanguage" : "en-US",
+      "author" : "jcperalta",
+      "creator" : "jcperalta",
+      "publisher": "jcperalta",
+      "accountablePerson" : "jcperalta",
+      "copyrightHolder" : "jcperalta",
+      "copyrightYear" : "2025",
+      "datePublished": "2025-01-10 00:00:00 \x2b0800 PST",
+      "dateModified" : "2025-01-10 00:00:00 \x2b0800 PST",
+      "url" : "https:\/\/jcacperalta.github.io\/blog\/enhance-relief-distribution-network-science\/",
+      "wordCount" : "1290",
+      "keywords" : ["gis", "building", "opendata", "geospatial", "viz", "Blog"]
+    }
+  
+  </script>
+<meta property="og:title" content="Using Network Science to Optimize Disaster Relief in the Philippines" />
+<meta property="og:description" content="A tool to simulating the benefits of new relief food hub for provinces in Visayas, Philippines" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jcacperalta.github.io/blog/enhance-relief-distribution-network-science/" />
+<meta property="og:image" content="https://jcacperalta.github.io/images/blog/enhance-relief-distribution-network-science/enhance_relief_ops_preview.png" />
+<meta property="article:published_time" content="2025-01-10T00:00:00+08:00" />
+<meta property="article:modified_time" content="2025-01-10T00:00:00+08:00" /><meta property="og:site_name" content="jcperalta" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jcacperalta.github.io/images/blog/enhance-relief-distribution-network-science/enhance_relief_ops_preview.png"/>
+
+<meta name="twitter:title" content="Using Network Science to Optimize Disaster Relief in the Philippines"/>
+<meta name="twitter:description" content="A tool to simulating the benefits of new relief food hub for provinces in Visayas, Philippines"/>
+
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">blog</a>
+      </li>
+    
+      <li>
+        <a  href="/works">works</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Using Network Science to Optimize Disaster Relief in the Philippines<span class="fancy">.</span></h1>
+            
+            <time datetime="2025-01-10 00:00:00 &#43;0800 PST" class="post__date"
+            >Jan 10 2025</time>
+            
+          </header>
+          <article class="post__content">
+              
+<p><code>Fork this project in Github </code><a href="https://github.com/jcacperalta/reliefops-visayas-app/">here</a>
+<br></p>
+<p><code>Play around with our interactive web app</code><a href="https://reliefops-visayas.streamlit.app/">here</a>
+<br>
+<br></p>
+<hr>
+<br>
+<p>Its been a while, everyone!</p>
+<p>I&rsquo;m really excited to share about this work because it took years in the making, almost 9 years to be exact!</p>
+<p>During this past decade, a series of supertyphoons &ndash; Yolanda (Haiyan), Odette (Rai) Pablo (Bopha), and Sendong (Washi) to name a few&ndash; have damaged entire regions and carved trauma into our generation&rsquo;s collective memory.</p>
+<p>As young scientists, we felt that it is duty to give back to the country by contributing a physicists&rsquo; perspective on disaster science.</p>
+<p>To accomplish this goal, <a href="https://scholar.google.com/citations?user=GawtT7YAAAAJ&amp;hl=en">Dr. Reinabelle Reyes</a> created and led the <a href="https://www.asianscientist.com/2016/02/features/asias-rising-scientists-reina-reyes/">DOST ReliefOpsPH project</a> back in 2014 to assess and identify improvements in country-wide relief operations through simulations, and later on, formed Project GeoNetworks with <a href="https://scholar.google.com.ph/citations?user=UvxZT-IAAAAJ&amp;hl=tl">Dr. May Lim</a> and I around 2017 to analyze the transport network of the Visayas region in the Philippines using complex network theory.</p>
+<p>We were doing the work on our spare time, more like a fun hobby than a formal project. Admittedly, we got caught in each of our own career shifts and hit a couple of dead ends, so it took us about 7 years to finish a publication last 2023 in the <a href="https://philjournalsci.dost.gov.ph/publication/special-issues/meteorology/121-vol-152-no-s1-meteorology/1966-transport-network-efficiency-during-typhoon-relief-operations">Philippine Journal of Science</a>.</p>
+<p>Better late than never, right?</p>
+<p><img class="special-img-class" src="/images/blog/enhance-relief-distribution-network-science/geonetworks_team_pics.png" style="max-width: 800px; width: 100%; height: auto;" /></p>
+<figcaption><p>The GeoNetworks team journey throughout the years! (a) the DOST ReliefOpsPH project launch - our first event in 2015 hosted by Venus Raj (b) our first team meetup at Katipunan in 2017 (c) one of our virtual meetings to finish the paper in 2022 (d) Dr. Reyes and Dr. Lim presenting at Congress in the Philippine House Committee on Visayas Development (e) Dr. Reyes and me presenting at a NEDA brownbag session and (f) after our keynote presentation at PyCon PH 2024</p>
+</figcaption> 
+<!-- <figcaption><p>The GeoNetworks team journey throughout the years! (a) the [DOST ReliefOpsPH project](https://www.asianscientist.com/2016/02/features/asias-rising-scientists-reina-reyes/) launch - our first event in 2015 hosted by Venus Raj (b) our first team meetup at Katipunan in 2017 (c) one of our virtual meetings to finish the paper in 2022 (d) Dr. Reyes and Dr. Lim presenting at Congress, in a [House Committee for Visayas]((https://www.linkedin.com/posts/activity-7167731113048653824-PjK7?utm_source=share&utm_medium=member_desktop)) to be exact (e) Dr. Reyes and me presenting at a [NEDA brownbag session](https://www.linkedin.com/posts/activity-7224628442275667968-iOQQ?utm_source=share&utm_medium=member_desktop) and (f) after our keynote presentation at [PyCon PH 2024] (https://www.linkedin.com/posts/activity-7167731113048653824-PjK7?utm_source=share&utm_medium=member_desktop) </p>
+</figcaption> -->
+<p>In this blog, I want to share with you the accompanying app to our 2023 paper. The app is a tool that provincial level planners can use to <strong>simulate relief delivery travel times</strong> from the source hub at the provincial capital, going to each of the component LGU towns, and in addition, compare and assess the effect of adding a new hub to a component LGU town of their choice.</p>
+<p>We invite you to test out our app below!</p>
+<br>
+<br>
+<iframe width="90%" height="800" name="iframe" src="https://reliefops-visayas.streamlit.app/New_Hub/?embed=true" frameborder="0" scrolling="no"></iframe>
+<h2 id="what-the-app-does">What the app does<a class="anchor" href="#what-the-app-does">#</a></h2>
+<p>The relief delivery times computed by the tool are the estimated travel times to each component LGU from the food hub nearest to them (either the original capital hub or the new hub). We did this by representing the land and sea transport network of Visayas as a mathematical object known as a <a href="https://towardsdatascience.com/transportation-network-analysis-with-graph-theory-55eceb7e4de4">graph</a>, where road intersections and ports represent nodes, whereas road segments and sea routes constitute the edges. This method allowed us to programatically trace routes from any two points in the area.</p>
+<p><img class="special-img-class" src="https://i0.wp.com/transportgeography.org/wp-content/uploads/graph_representation_real_network.png?resize=900%2C500&ssl=1" style="max-width: 400px; width: 100%; height: auto;" /></p>
+<figcaption><p>A system of roads represented by a graph</p>
+</figcaption>
+<p>The outputs are (1) simulated routes maps and (2) delivery travel time savings when the +1 new hub scenario is compared to the baseline single hub scenario.</p>
+<p>Shown below is an example of an output simulation for <strong>Bohol province</strong>. The left map shows the baseline scenario, with Tagbilaran, the province capital, as the only relief hub. With a new food hub in the town of <strong>Ubay</strong> at the west end of the island, it will take only <strong>1.2 hrs to reach all LGUs</strong> in the province, which is a <strong>52.0% reduction from the baseline</strong> (2.5 hrs).</p>
+<p><img class="special-img-class" src="/images/blog/enhance-relief-distribution-network-science/bohol_sample_output.png" style="max-width: 800px; width: 100%; height: auto;" /></p>
+<figcaption><p>Sample output for Bohol</p>
+</figcaption>
+<p>We do have important assumptions to disclose. In this idealized simulation:</p>
+<ul>
+<li>Deliveries to all LGUs start <strong>simultaneously</strong> from the food hubs.</li>
+<li>Deliveries <strong>do not incorporate stopovers</strong> in towns they would pass by, but only on its destination.</li>
+<li>All land and sea routes are <strong>undamaged</strong> and considered fully passable.</li>
+</ul>
+<p>These assumptions will not hold in real-life scenarios, where disruption is to be expected from already non-ideal conditions. Still, the maps generated by the simulation can serve to illustrate the potential impact of activating new food hubs to more efficient relief distribution for nearby areas and may be used as a starting point for more detailed projections.</p>
+<h2 id="datasets-used">Datasets used<a class="anchor" href="#datasets-used">#</a></h2>
+<p><img class="special-img-class" src="/images/blog/enhance-relief-distribution-network-science/visayas_transport_network.png" style="max-width: 600px; width: 100%; height: auto;" /></p>
+<figcaption><p>The Visayas transport network</p>
+</figcaption>
+<p>We constructed the Visayas land and sea transport network using open data. For the road networks, we used available OpenStreetMap (OSM) data from June 2024 and cleaned it up so only vehicle-passable roads are kept. Sea routes connecting the islands of Visayas were identified from three sources in 2018: ferry routes in (1) OSM (2) Google Maps, and (3) the Visayas General Logistics Planning Map created by Logistics Cluster of the United Nations World Food Programme (UN-WFP) from long-term engagements with LGUs in the aftermath of Typhoon Haiyan hitting the region in November 2013.</p>
+<p>We also obtained the coordinates of the local government municipal/city hall (or the market/plaza if latter is not available), to serve as the town center for the simulations. It is assumed that all disaster relief efforts start in these town centers and aid is received on this location.</p>
+<h2 id="key-results-from-the-paper">Key Results from the paper<a class="anchor" href="#key-results-from-the-paper">#</a></h2>
+<p>Our paper included more insights from the Visayas-wide baseline scenario, where we considered regional level operations:</p>
+<ul>
+<li>
+<p>We have estimated that <strong>most Visayas towns can be reached within 4 hours from a regional food hub</strong>. Town centers in northern Negros and southeastern Panay in Region 6 were reached in about 5 hours, whereas the rest of the region is reached in 6–8 hours. Remarkably, travel times to Samar Island in Region 8 are longer (~ 7 hours) than to Leyte Island (~ 5 hours) despite being in the same region and having similar geodesic distance from their regional food hub.</p>
+</li>
+<li>
+<p>Assuming an undamaged network state and normal land and sea traffic conditions, <strong>one-half and three-quarters of the whole Visayas population can theoretically be reached within 3.5 and 5.5 hours</strong>, respectively.</p>
+</li>
+<li>
+<p>However, it would take about <strong>13 hours to reach the remaining one-quarter of the population</strong> to finally complete the delivery to all Visayas town centers. Travel to these few farther towns involves long coastal highways traversing sea routes.</p>
+</li>
+</ul>
+<p>We created the app with the intention to further localize the applicability of our insights, and to help LGUs in planning new food hubs at the provincial level.</p>
+<h2 id="next-steps">Next Steps<a class="anchor" href="#next-steps">#</a></h2>
+<p>We have barely scratched the surface of the possibilities of the model transport network that we made. Some next steps that we have discussed are the following.</p>
+<ul>
+<li><strong>Incorporating damage scenarios in the app</strong>. Given our model, we can estimate how long of a delivery delay is expected given a certain % of road nodes being damaged. This development is in the works!</li>
+<li><strong>Consider road hazard exposures and vulnerabilities</strong>. Currently, our simulations assume a homogenous random probability of damage to all road nodes, but we all know that is not the case in real life. For example, some roads are in landslide prone areas, while others are either of lower grade or poorly maintained. These can be included in the damage algorithm as another parameter.</li>
+<li><strong>New region?</strong> We wrote the code so it would be easy for any programmer to create and simulate any region in the Philippines, or in the world. Would anyone of you be interested in modelling your home region?</li>
+</ul>
+<p>I hope this was useful! Thank you so much and see you in the next blog!</p>
+<br>
+<hr>
+
+
+              
+                  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    
+    
+    
+    
+    </ul>
+
+ 
+          
+            <div class="pagination">
+  
+    <a class="pagination__item" href="https://jcacperalta.github.io/blog/explore-open-buildings/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Exploring Google Open Buildings data with Geowrangler</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__icon" title="Twitter"
+         style="background-image: url(/images/social/twitter.svg)" 
+         href="https://twitter.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="GitHub"
+         style="background-image: url(/images/social/github.svg)" 
+         href="https://github.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Email"
+         style="background-image: url(/images/social/email.svg)" 
+         href="mailto:jcacperalta@gmail.com"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+  
+     
+    
+      <a class="social-icons__icon" title="LinkedIn"
+         style="background-image: url(/images/social/linkedin.svg)" 
+         href="https://linkedin.com/in/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="YouTube"
+         style="background-image: url(/images/social/youtube.svg)" 
+         href="https://www.youtube.com/channel/UCbCGhJ-dBD5EqYfkYd96gMw"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__icon" title="Scholar"
+         style="background-image: url(/images/social/scholar.svg)" 
+         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         target="_blank" rel="noopener">
+      </a>
+    
+  
+     
+    
+     
+</div>
+
+            <p>© 2020</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

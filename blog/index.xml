@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Wed, 22 Feb 2023 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jcacperalta.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Network Science to Optimize Disaster Relief in the Philippines</title>
+      <link>https://jcacperalta.github.io/blog/enhance-relief-distribution-network-science/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/enhance-relief-distribution-network-science/</guid>
+      <description>A tool to simulating the benefits of new relief food hub for provinces in Visayas, Philippines</description>
+    </item>
     
     <item>
       <title>Exploring Google Open Buildings data with Geowrangler</title>
