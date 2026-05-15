@@ -82,7 +82,7 @@
       "datePublished": "2026-05-11 00:00:00 \x2b0800 PST",
       "dateModified" : "2026-05-11 00:00:00 \x2b0800 PST",
       "url" : "https:\/\/jcacperalta.github.io\/blog\/ph-warming\/",
-      "wordCount" : "1409",
+      "wordCount" : "1428",
       "keywords" : ["climate", "philippines", "viz", "Blog"]
     }
   
@@ -195,19 +195,20 @@
 </ul>
 <p>However, there are caveats to these findings:</p>
 <ul>
-<li>The historical data used (ERA5-Land) may deviate from local ground station measurements. A formal validation study has yet to be done for the Philippines.</li>
+<li>The historical data used (ERA5-Land) may deviate from local ground station measurements (In another project, I personally have noted that the temperatures are colder in the reanalysis by about 1-1.5°C). A formal validation study has yet to be done for the Philippines.</li>
 <li>The viz only shows a single future climate model projection for simplicity. In studies, a robust climate trend requires an ensemble of multiple models to provide a higher degree of confidence.</li>
 </ul>
 <h2 id="anomalies-are-computed-from-a-standard-1980-2010-baseline">Anomalies are computed from a standard 1980-2010 baseline<a class="anchor" href="#anomalies-are-computed-from-a-standard-1980-2010-baseline">#</a></h2>
-<p>Anomaly in climate data is defined as the deviation from a &ldquo;normal&rdquo; climate pattern. This quantity shows how much warmer or cooler a specific period is compared to the long-term average. This average typically covers 30 years as recommended by the <a href="https://www.un.org/en/climatechange/science/climate-issues/degrees-matter">World Meteorological Organization (WMO)</a>).To compute this, you first average the temperature for each specific day across the 30-year window to create a &ldquo;climatology&rdquo; curve that represents the expected seasonal cycle. This daily baseline is then subtracted from both historical measurements and future model scenarios.</p>
+<p>Anomaly in climate data is defined as the deviation from a &ldquo;normal&rdquo; climate pattern. This quantity shows how much warmer or cooler a specific period is compared to the long-term average. This average typically covers 30 years as recommended by the <a href="https://www.un.org/en/climatechange/science/climate-issues/degrees-matter">World Meteorological Organization (WMO)</a>.</p>
+<p>To compute this, you first average the temperature for each specific day across the 30-year window to create a &ldquo;climatology&rdquo; curve that represents the expected seasonal cycle. This daily baseline is then subtracted from both historical measurements and future model scenarios.</p>
 <h2 id="datasets-used">Datasets Used<a class="anchor" href="#datasets-used">#</a></h2>
 <p>I used two data sources for the visualization: one to cover the historical period (1950-2025) and another for the future period (2026-2010)</p>
 <h3 id="historical-data-is-from-a-reanalysis-dataset">Historical data is from a reanalysis dataset<a class="anchor" href="#historical-data-is-from-a-reanalysis-dataset">#</a></h3>
 <p><strong>Reanalysis datasets</strong> are blends of climate model output and observations (stations, radar and satellite imagery). While ground measurements are ideal, these are often patchy or incomplete. The climate model takes these in and acts as a bridge to create a continuous, consistent map of the global atmosphere for every hour of every day over several decades.</p>
 <p>Here, I used <a href="https://www.ecmwf.int/en/era5-land">ERA5-Land</a> daily surface temperature for the historical period. ERA5-Land is a reanalysis dataset provided by the <a href="https://www.ecmwf.int/en/about/media-centre/focus/2023/fact-sheet-reanalysis">European Centre for Medium-Range Weather Forecasts</a>. The data is a replay of the land component of the more famous ERA5 climate reanalysis but with a finer 9km resolution, about 3x higher resolution to that of the latter (~30km).</p>
 <h3 id="future-projection-data-is-a-cmip6-ssp-scenario">Future projection data is a CMIP6 SSP scenario<a class="anchor" href="#future-projection-data-is-a-cmip6-ssp-scenario">#</a></h3>
-<p>The <strong>Coupled Model Intercomparison Project Phase 6 (CMIP6)</strong> is a global collaborative effort where climate modeling centers around the world run the same set of experiments to better understand past, present, and future climate changes.</p>
-<p>To explore potential futures, CMIP6 uses <strong>Shared Socio-economic Pathways (SSPs)</strong>, which are scenarios that describe different ways the world might evolve in terms of population, economic growth, and environmental policy. These SSPs are essentially &ldquo;storylines&rdquo; ranging from sustainable, &ldquo;green&rdquo; development (SSP1) and &ldquo;middle of the road&rdquo; trends (SSP2) to high-inequality (SSP4) or intensive fossil-fuel-led growth (SSP5).</p>
+<p>The <strong><a href="https://cds.climate.copernicus.eu/datasets/projections-cmip6?tab=overview">Coupled Model Intercomparison Project Phase 6 (CMIP6)</a></strong> is a global collaborative effort where climate modeling centers around the world run the same set of experiments to better understand past, present, and future climate changes.</p>
+<p>To explore potential futures, CMIP6 uses <strong><a href="https://climatedata.ca/resource/understanding-shared-socio-economic-pathways-ssps/">Shared Socio-economic Pathways (SSPs)</a></strong>, which are scenarios that describe different ways the world might evolve in terms of population, economic growth, and environmental policy. These SSPs are essentially &ldquo;storylines&rdquo; ranging from sustainable, &ldquo;green&rdquo; development (SSP1) and &ldquo;middle of the road&rdquo; trends (SSP2) to high-inequality (SSP4) or intensive fossil-fuel-led growth (SSP5).</p>
 <p><img class="special-img-class" style="width: 45%; height: auto;" src="https://www.dkrz.de/bilder/bilder-cmip6/co2-emissions/@@images/image-400-57dee4c89a024d4ce360bbffc32eee5e.jpeg" /></p>
 <figcaption><p>Historical and future global CO2 emissions contained in Shared Socioeconomic Pathways (SSP) scenarios </p>
 </figcaption>
@@ -221,7 +222,8 @@
 </li>
 </ul>
 <h3 id="overshooting-data-needs-bias-correction">Overshooting data needs bias correction<a class="anchor" href="#overshooting-data-needs-bias-correction">#</a></h3>
-<p>The <strong>bias</strong>, or the difference from observed measurements, is the metric we use to quantify the accuracy of a climate model variable. Even the most advanced models will have some degree of bias because these use relatively coarse grids and must use mathematical approximations for complex local weather. <strong>Bias correction</strong> is a statistical method to adjust the distribution of values so the model more closely aligns with historical data while still keeping its inherent features (Read more <a href="https://climate.copernicus.eu/sites/default/files/2021-01/infosheet7.pdf">here</a>).</p>
+<p>The <strong>bias</strong>, or the difference from observed measurements, is the metric we use to quantify the accuracy of a climate model variable. Even the most advanced models will have some degree of bias because these use relatively coarse grids and must use mathematical approximations for complex local weather.</p>
+<p><strong>Bias correction</strong> is a statistical method to adjust the distribution of values so the model more closely aligns with historical data while still keeping its inherent features (Read more <a href="https://climate.copernicus.eu/sites/default/files/2021-01/infosheet7.pdf">here</a>).</p>
 <p>I looked at the future projection data, and although EC-EARTH3-Veg-LR was good, the projections shoot up to +4 to +6 C at 2050-2060, which is not realistic. I have to use a bias correction method to bring it closer to the observed distribution.</p>
 <p><img class="special-img-class" src="/images/blog/ph-warming/biasc.png" /></p>
 <figcaption><p>Comparing the historical ERA5-Land data and raw and bias corrected EC-EARTH3-Veg-LR model data </p>
