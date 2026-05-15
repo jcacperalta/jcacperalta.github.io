@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jcacperalta.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A visualization of 150 years of Philippine warming is now in my business card</title>
+      <link>https://jcacperalta.github.io/blog/ph-warming/</link>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0800</pubDate>
+      
+      <guid>https://jcacperalta.github.io/blog/ph-warming/</guid>
+      <description>A visualization of Philippine daily land temperature anomalies from 1950-2100</description>
+    </item>
     
     <item>
       <title>Using Network Science to Optimize Disaster Relief in the Philippines</title>
@@ -118,8 +127,8 @@
       
       <guid>https://jcacperalta.github.io/about/</guid>
       <description>Thanks for stopping by!
-I am currently a data scientist at the Commercial Operations Division of AC Energy Philippines where I create and deploy market forecasting models and provide weather/climate insights for power trading.
-Prior to that, I trained for 6 years as a climate scientist and earned my masters in Atmospheric Science from Ateneo de Manila University last 2019. My topics of interest include regional monsoon dynamics, data validation techniques and climate model evaluation.</description>
+I am a consultant, climate scientist, geospatial AI modeler and data visualization practitioner with 11+ years in delivering climate, AI, energy, sustainability and good governance targeted projects across various sectors.
+I trained for 6 years in climate science from my undergraduate years as a BS Applied Physics major, and earned my Masters in Atmospheric Science from Ateneo de Manila University last 2019. My topics of interest include regional monsoon dynamics, extreme heat, data validation techniques, climate model evaluation and agent-based modelling.</description>
     </item>
     
     <item>
