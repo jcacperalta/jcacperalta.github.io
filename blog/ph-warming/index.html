@@ -82,7 +82,7 @@
       "datePublished": "2026-05-11 00:00:00 \x2b0800 PST",
       "dateModified" : "2026-05-11 00:00:00 \x2b0800 PST",
       "url" : "https:\/\/jcacperalta.github.io\/blog\/ph-warming\/",
-      "wordCount" : "1428",
+      "wordCount" : "1436",
       "keywords" : ["climate", "philippines", "viz", "Blog"]
     }
   
@@ -162,24 +162,12 @@
 <p>A year since my last post here, hello again!</p>
 <p>I’ve been wanting to design a personal business card for ages. While scouting for ideas, I realized this blog was due for a serious update too.</p>
 <p>I figured I’d hit two birds with one stone by creating a fresh visualization and turn that into the business card&rsquo;s centerpiece&ndash; a <strong>viz card</strong> if I may claim the term! XD</p>
-<h2 id="the-inspiration">The inspiration<a class="anchor" href="#the-inspiration">#</a></h2>
-<p><img class="special-img-class" src="/images/blog/ph-warming/climate-stripes-ph.png" /></p>
-<figcaption><p>Increasing temperatures in the Philippines represented by climate stripes of developed by Ed Hawkins of the University of Reading </p>
-</figcaption>
-<p>I wanted to create a climate viz that focuses on Philippines and reflects my skill as a professional in the field. Right now, the most popular ones are the <a href="https://www.reading.ac.uk/planet/climate-resources/climate-stripes">climate stripes developed by the great visualizer Ed Hawkins of University of Reading, UK</a>.</p>
-<p>It is very straightforward&ndash;blue is cooler, red is warmer, and unmistakably, the recent years are hotter than the previous ones. This drives the point but it doesn&rsquo;t pique my interest. I hunger for more details.</p>
-<p><img class="special-img-class" style="width: 45%; height: auto;" src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/1216F/production/_132259047_global_temp_delta_1991_2020avg_multiple_ridges_v2-2x-nc.png.webp" /></p>
-<figcaption><p>Distribution of global temperature anomalies (°C) relative to 1991–2020 for each year from 1940 to 2025 by Ervan Rivoult for BBC</p>
-</figcaption>
-<p>Then I saw this beautiful plot from BBC&rsquo;s <a href="https://www.bbc.com/news/science-environment-67861954">2023 confirmed as world&rsquo;s hottest year on record</a> article by one of the data visualization artists I follow, Erwan Rivault (view his portfolio <a href="https://erwanrivault.com/">here</a>). This is a ridgeplot of temperature anomalies filled with a horizontal gradient.</p>
-<p>I decided to go with this viz but with data focused on Philippines. As soon as I started looking up python modules that can do this viz, I realize that its not straightforward and might need &ldquo;hacks&rdquo; to replicate, which I find too cumbersome. There is, however, a module in R <code>gridges</code> that can do this viz in a very straightforward manner.</p>
-<p>But the thing is, I dont know R! So what I did was I coded in python, and used Gemini to translate it to R. I provided the final code as a <a href="https://colab.research.google.com/drive/1-a5-NymgfwHSEx94jkDAETOZH2MPfhij#scrollTo=Us4g0x-Iqdr6">Google Colab notebook</a> and added design tweaks to the plot so it would fit nicely to my card.</p>
-<p>(The full climate data processing code is also available, <a href="">message me</a> if you are interested to build on this!)</p>
-<h2 id="key-results-and-caveats">Key Results and Caveats<a class="anchor" href="#key-results-and-caveats">#</a></h2>
+<h2 id="the-viz-card">The viz card<a class="anchor" href="#the-viz-card">#</a></h2>
 <p><img class="special-img-class" src="/images/blog/ph-warming/vizcard.png" /></p>
-<figcaption><p>Distribution of Philippine Daily Surface Temperature Anomalies with respect to 1980-2010 baseline
+<figcaption><p>My viz card - The distribution of Philippine Daily Surface Temperature Anomalies with respect to 1980-2010 baseline
 </p>
 </figcaption>
+<h2 id="key-results-and-caveats">Key Results and Caveats<a class="anchor" href="#key-results-and-caveats">#</a></h2>
 <p>The visualization reveals the following results:</p>
 <ul>
 <li>
@@ -198,6 +186,19 @@
 <li>The historical data used (ERA5-Land) may deviate from local ground station measurements (In another project, I personally have noted that the temperatures are colder in the reanalysis by about 1-1.5°C). A formal validation study has yet to be done for the Philippines.</li>
 <li>The viz only shows a single future climate model projection for simplicity. In studies, a robust climate trend requires an ensemble of multiple models to provide a higher degree of confidence.</li>
 </ul>
+<h2 id="the-inspiration">The inspiration<a class="anchor" href="#the-inspiration">#</a></h2>
+<p><img class="special-img-class" src="/images/blog/ph-warming/climate-stripes-ph.png" /></p>
+<figcaption><p>Increasing temperatures in the Philippines represented by climate stripes of developed by Ed Hawkins of the University of Reading </p>
+</figcaption>
+<p>I wanted to create a climate viz that focuses on Philippines and reflects my skill as a professional in the field. Right now, the most popular ones are the <a href="https://www.reading.ac.uk/planet/climate-resources/climate-stripes">climate stripes developed by the great visualizer Ed Hawkins of University of Reading, UK</a>.</p>
+<p>It is very straightforward&ndash;blue is cooler, red is warmer, and unmistakably, the recent years are hotter than the previous ones. This drives the point but it doesn&rsquo;t pique my interest. I hunger for more details.</p>
+<p><img class="special-img-class" style="width: 45%; height: auto;" src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/1216F/production/_132259047_global_temp_delta_1991_2020avg_multiple_ridges_v2-2x-nc.png.webp" /></p>
+<figcaption><p>Distribution of global temperature anomalies (°C) relative to 1991–2020 for each year from 1940 to 2025 by Ervan Rivoult for BBC</p>
+</figcaption>
+<p>Then I saw this beautiful plot from BBC&rsquo;s <a href="https://www.bbc.com/news/science-environment-67861954">2023 confirmed as world&rsquo;s hottest year on record</a> article by one of the data visualization artists I follow, Erwan Rivault (view his portfolio <a href="https://erwanrivault.com/">here</a>). This is a ridgeplot of temperature anomalies filled with a horizontal gradient.</p>
+<p>I decided to go with this viz but with data focused on Philippines. As soon as I started looking up python modules that can do this viz, I realize that its not straightforward and might need &ldquo;hacks&rdquo; to replicate, which I find too cumbersome. There is, however, a module in R <code>gridges</code> that can do this viz in a very straightforward manner.</p>
+<p>But the thing is, I dont know R! So what I did was I coded in python, and used Gemini to translate it to R. I provided the final code as a <a href="https://colab.research.google.com/drive/1-a5-NymgfwHSEx94jkDAETOZH2MPfhij#scrollTo=Us4g0x-Iqdr6">Google Colab notebook</a> and added design tweaks to the plot so it would fit nicely to my card.</p>
+<p>(The full climate data processing code is also available, <a href="">message me</a> if you are interested to build on this!)</p>
 <h2 id="anomalies-are-computed-from-a-standard-1980-2010-baseline">Anomalies are computed from a standard 1980-2010 baseline<a class="anchor" href="#anomalies-are-computed-from-a-standard-1980-2010-baseline">#</a></h2>
 <p>Anomaly in climate data is defined as the deviation from a &ldquo;normal&rdquo; climate pattern. This quantity shows how much warmer or cooler a specific period is compared to the long-term average. This average typically covers 30 years as recommended by the <a href="https://www.un.org/en/climatechange/science/climate-issues/degrees-matter">World Meteorological Organization (WMO)</a>.</p>
 <p>To compute this, you first average the temperature for each specific day across the 30-year window to create a &ldquo;climatology&rdquo; curve that represents the expected seasonal cycle. This daily baseline is then subtracted from both historical measurements and future model scenarios.</p>
@@ -302,9 +303,12 @@
   
      
     
-      <a class="social-icons__icon" title="Email"
-         style="background-image: url(/images/social/email.svg)" 
-         href="mailto:jcacperalta@gmail.com"
+  
+     
+    
+      <a class="social-icons__icon" title="Facebook"
+         style="background-image: url(/images/social/facebook.svg)" 
+         href="https://facebook.com/%3cyour%20handle%3e"
          target="_blank" rel="noopener">
       </a>
     
@@ -314,8 +318,11 @@
   
      
     
-  
-     
+      <a class="social-icons__icon" title="Instagram"
+         style="background-image: url(/images/social/instagram.svg)" 
+         href="https://instagram.com/jcacperalta"
+         target="_blank" rel="noopener">
+      </a>
     
   
      
@@ -340,7 +347,7 @@
     
       <a class="social-icons__icon" title="Scholar"
          style="background-image: url(/images/social/scholar.svg)" 
-         href="https://scholar.google.com/citations?user=XHmhEDYAAAAJ&amp;hl=en"
+         href="https://scholar.google.com/citations?user=suoE_pIAAAAJ&amp;hl=en"
          target="_blank" rel="noopener">
       </a>
     
